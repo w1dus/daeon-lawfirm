@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", function(e){
 })
 
 
+
 const asideMenuHandler = () => {
 
     //슬라이드 메뉴 열기
@@ -18,8 +19,12 @@ const asideMenuHandler = () => {
     $('.aside-menu .btn-wrap .close-btn').click(function(){
         $('.aside-menu').removeClass('active');
         $('.aside-menu .aside-content').removeClass('active');
+        $('.aside-menu').removeClass('active');
+        $('.aside-menu .aside-content').removeClass('active');
     })
     $(".aside-menu").click(function(){
+        $('.aside-menu').removeClass('active');
+        $('.aside-menu .aside-content').removeClass('active');
         $('.aside-menu').removeClass('active');
         $('.aside-menu .aside-content').removeClass('active');
     })
