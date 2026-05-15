@@ -178,11 +178,11 @@ footer .copy-right{ margin-top: 35px; font-size: 14px; opacity: .6; }
 .main .visual-section .half-div .right-div .item .title{ font-size: 18px; line-height: 1.5em; }
 .main .visual-section .half-div .right-div .item .content{ min-width: 250px; display: flex; align-items: center; justify-content: center; gap: 5px; margin-top: 5px; border: 1px solid #fff; border-radius: 10px; padding: 15px 20px; font-size: 26px; line-height: 1.5em; font-weight: 600; }
 .main .visual-section .half-div .right-div .item .content .count{ font-size: 2em; font-weight: 700; }
-.main .visual-section .btn-wrap{ position: relative; z-index: 1; margin-top: 50px; display: flex; align-items: center; justify-content: center; gap: 12px; }
-.main .visual-section .btn-wrap .item{ transition: background .4s; border-radius: 100px; background: linear-gradient(to right, #1C285B, #4D69E2);  color: #fff; text-align: center; width: 50%; max-width: 291px; padding: 2px; }
-.main .visual-section .btn-wrap .item .text{ transition: background .4s; border-radius: 100px; background-color: #222; padding:12px 10px; line-height: 1.5em; font-weight: 400; }
-.main .visual-section .btn-wrap .item:hover{ background: linear-gradient(to right, #732EFC, #A786EE); }
-.main .visual-section .btn-wrap .item:hover .text{ background-color: #000; }
+.visual-section .btn-wrap{ position: relative; z-index: 1; margin-top: 50px; display: flex; align-items: center; justify-content: center; gap: 12px; }
+.visual-section .btn-wrap .item{ transition: background .4s; border-radius: 100px; background: linear-gradient(to right, #1C285B, #4D69E2);  color: #fff; text-align: center; width: 50%; max-width: 291px; padding: 2px; }
+.visual-section .btn-wrap .item .text{ transition: background .4s; border-radius: 100px; background-color: #222; padding:12px 10px; line-height: 1.5em; font-weight: 400; }
+.visual-section .btn-wrap .item:hover{ background: linear-gradient(to right, #732EFC, #A786EE); }
+.visual-section .btn-wrap .item:hover .text{ background-color: #000; }
 .main .visual-section .scroll-box{ position: relative; z-index: 1; margin-top: 50px; display: flex; align-items: center; justify-content: center; gap: 12px; }
 .main .visual-section .scroll-box .text{ font-size: 14px; line-height: 1.5em; font-weight: 400; }
 .main .visual-section .scroll-box{ display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; }
@@ -197,7 +197,7 @@ footer .copy-right{ margin-top: 35px; font-size: 14px; opacity: .6; }
     .main .visual-section .half-div .left-div .content{ font-size: 18px; }
     .main .visual-section .half-div .right-div{ width: 400px; }
     .main .visual-section .half-div .right-div .item .content{ font-size: 20px; }
-    .main .visual-section .btn-wrap .item{ width: 220px; }
+    .visual-section .btn-wrap .item{ width: 220px; }
 }
 @media screen and (max-width: 950px) { 
     .main .visual-section .inner .circle.circle1{ width: 70%; right: -30%; bottom: 0%; }
@@ -217,7 +217,7 @@ footer .copy-right{ margin-top: 35px; font-size: 14px; opacity: .6; }
     .main .visual-section .half-div .right-div .item{ padding: 15px; }
     .main .visual-section .half-div .right-div .item .title{ font-size: 14px; }
     .main .visual-section .half-div .right-div .item .content{ max-width: 100%; padding: 10px; font-size: 16px; }
-    .main .visual-section .btn-wrap{ margin-top: 20px; gap: 10px; }
+    .visual-section .btn-wrap{ margin-top: 20px; gap: 10px; }
 }
 @media screen and (max-width: 500px) { 
     .main .visual-section .inner .circle.circle1{ width: 100%; right: -30%; bottom: -5%; }
