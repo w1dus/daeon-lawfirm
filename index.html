@@ -10,18 +10,18 @@
         <link rel="stylesheet" href="./style/style.css">
         <link rel="stylesheet" href="./style/animation.css">
         <link rel="stylesheet" href="./style/customBoard.css">
+        <!-- GSAP (close-section pin 등 — script.js보다 먼저 로드) -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.1/ScrollToPlugin.min.js"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollSmoother.min.js"></script>
+        <!-- swiper -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
         <!--스크립트-->
         <script type="text/javascript" src="./script/script.js"></script>
         <script type="text/javascript" src="./script/customBoard.js"></script>
         <script type="text/javascript" src="./script/common_jp.js"></script>
-        <!-- 패럴렉스 -->
-        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollSmoother.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.1/ScrollToPlugin.min.js"></script>
-        <!-- swiper -->
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
-        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     </head>
     <body>
         <!-- 헤더 { -->
@@ -271,7 +271,7 @@
                                     <b>결과까지 책임지는 변호사</b>입니다.
                                 </h2>
                                 <div class="content">
-                                    <b>신동우 변호사는 승소 경험이 없는 사건은 수임하지 않습니다</b><br/>
+                                    <b>신동우 변호사는 <br class="mo-br"/>승소 경험이 없는 사건은 <br class="mo-br"/>수임하지 않습니다</b><br/>
                                     검증된 법률전문가의 외부활동
                                 </div>
                                 <div class="content-wrap">
@@ -310,25 +310,296 @@
                             </div>
                         </div>
                     </section>
-                    <section class="oneteam-section">
-                        <div class="inner">
-                            <h3 class="main-sub-title center">상담부터 결과까지, <br class="mo-br"/>법무법인 대온만의 전략으로 완성하는</h3>
-                            <h2 class="main-title center"><b>One-Team <br class="mo-br"/>밀착 대응 법률서비스</b></h2>
-                            <div class="content-box">
-                                단순한 사건 진행에 그치지 않고, 사건 분석 · 전략 수립 · 조사 대응 · 재판 진행까지<br/>
-                                <b>대표변호사와 담당 변호사가 전 과정을 직접 함께합니다</b>
+                    <main class="overlap-wrap">
+                        <section class="oneteam-section">
+                            <div class="inner">
+                                <h3 class="main-sub-title center">상담부터 결과까지, <br class="mo-br"/>법무법인 대온만의 전략으로 완성하는</h3>
+                                <h2 class="main-title center"><b>One-Team <br class="mo-br"/>밀착 대응 법률서비스</b></h2>
+                                <div class="content-box">
+                                    단순한 사건 진행에 그치지 않고, <br class="mo-br"/>사건 분석 · 전략 수립 · 조사 대응 · 재판 진행까지<br/>
+                                    <b>대표변호사와 담당 변호사가 <br class="mo-br"/>전 과정을 직접 함께합니다</b>
+                                </div>
+                                <div class="slide-wrap">
+                                    <div class="swiper mySwiper">
+                                        <div class="swiper-wrapper">
+                                            <div class="swiper-slide">
+                                                <a href="#">
+                                                    <div class="item">
+                                                        <div class="img-box" style="background-image: url('./img/main/oneteam-section/item-background1.jpg');"></div>
+                                                        <div class="text-box">
+                                                            <div class="title">상속</div>
+                                                            <div class="en-title">School Violence</div>
+                                                            <div class="button"><div class="text">Learn More + </div></div>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <a href="#">
+                                                    <div class="item">
+                                                        <div class="img-box" style="background-image: url('./img/main/oneteam-section/item-background2.jpg');"></div>
+                                                        <div class="text-box">
+                                                            <div class="title">학교폭력</div>
+                                                            <div class="en-title">School Violence</div>
+                                                             <div class="button"><div class="text">Learn More + </div></div>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <a href="#">
+                                                    <div class="item">
+                                                        <div class="img-box" style="background-image: url('./img/main/oneteam-section/item-background3.jpg');"></div>
+                                                        <div class="text-box">
+                                                            <div class="title">형사</div>
+                                                            <div class="en-title">Criminal Defense</div>
+                                                             <div class="button"><div class="text">Learn More + </div></div>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <a href="#">
+                                                    <div class="item">
+                                                        <div class="img-box" style="background-image: url('./img/main/oneteam-section/item-background4.jpg');"></div>
+                                                        <div class="text-box">
+                                                            <div class="title">이혼 · 상간</div>
+                                                            <div class="en-title">Divorce · Adultery</div>
+                                                             <div class="button"><div class="text">Learn More + </div></div>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <a href="#">
+                                                    <div class="item">
+                                                        <div class="img-box" style="background-image: url('./img/main/oneteam-section/item-background5.jpg');"></div>
+                                                        <div class="text-box">
+                                                            <div class="title">일반 민사</div>
+                                                            <div class="en-title">Civil Litigation</div>
+                                                             <div class="button"><div class="text">Learn More + </div></div>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="slide-wrap">
+                        </section>
+                        <section class="logo-section">
+                            <div class="gradient-box"></div>
+                            <div class="inner">
+                                <img src="./img/main/logo-section/logo.svg" alt="logo" class="logo" />
+                            </div>
+                        </section>
+                    </main>
+                    <section class="close-section"> <!--서브 공통-->
+                        <div class="inner">
+                            <div class="half-div">
+
+                                <div class="left-pin-wrap">
+                                <div class="left-div">
+                                    <h3 class="main-box-title">PROCESS</h3>
+                                    <h2 class="main-title">
+                                        대온이 자랑하는<br/>
+                                        <b>의뢰인 밀착 대응</b>
+                                    </h2>
+                                </div>
+                                </div>
+
+                                <div class="right-div">
+                                    <ul class="item-list">
+                                        <li class="active">
+                                            <div class="item">
+                                                <div class="check-div">
+                                                    <div class="check">
+                                                        <img src="./img/main/close-section/check-icon.svg" alt="체크" class="icon" />
+                                                    </div>
+                                                </div>
+                                                <div class="item-inner">
+                                                    <div class="item-body">
+                                                    <div class="number">01</div>
+                                                    <h3 class="main-box-title">상담신청</h3>
+                                                    <div class="content">
+                                                        대표 변호사가 직접 상담을 진행하며,<br/>
+                                                        사건의 핵심과 현재 상황을 정확하게 파악합니다.
+                                                    </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="item">
+                                                <div class="check-div">
+                                                    <div class="check">
+                                                        <img src="./img/main/close-section/check-icon.svg" alt="체크" class="icon" />
+                                                    </div>
+                                                </div>
+                                                <div class="item-inner">
+                                                    <div class="item-body">
+                                                    <div class="number">02</div>
+                                                    <h3 class="main-box-title">사건 선임 및 대응 시작</h3>
+                                                    <div class="content">
+                                                        사건 선임 이후 전담 변호사가 배정되며, <br/>
+                                                        초기 대응 방향과 전략 수립을 즉시 시작합니다.
+                                                    </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="item">
+                                                <div class="check-div">
+                                                    <div class="check">
+                                                        <img src="./img/main/close-section/check-icon.svg" alt="체크" class="icon" />
+                                                    </div>
+                                                </div>
+                                                <div class="item-inner">
+                                                    <div class="item-body">
+                                                    <div class="number">03</div>
+                                                    <h3 class="main-box-title">증거자료 및 사건 검토</h3>
+                                                    <div class="content">
+                                                        사건 선임 이후 전담 변호사가 배정되며, <br/>
+                                                        초기 대응 방향과 전략 수립을 즉시 시작합니다.
+                                                    </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="item">
+                                                <div class="check-div">
+                                                    <div class="check">
+                                                        <img src="./img/main/close-section/check-icon.svg" alt="체크" class="icon" />
+                                                    </div>
+                                                </div>
+                                                <div class="item-inner">
+                                                    <div class="item-body">
+                                                    <div class="number">04</div>
+                                                    <h3 class="main-box-title">맞춤 전략 수립</h3>
+                                                    <div class="content">
+                                                        대표변호사를 포함한 담당 변호사들이 직접 회의를 진행하며, <br/>
+                                                        사건별 맞춤 전략을 설계합니다.
+                                                    </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="item">
+                                                <div class="check-div">
+                                                    <div class="check">
+                                                        <img src="./img/main/close-section/check-icon.svg" alt="체크" class="icon" />
+                                                    </div>
+                                                </div>
+                                                <div class="item-inner">
+                                                    <div class="item-body">
+                                                    <div class="number">05</div>
+                                                    <h3 class="main-box-title">판례 및 법리 분석</h3>
+                                                    <div class="content">
+                                                        대온의 승소 사례와 유사 판례, 대법원 법리를 기반으로 <br/>
+                                                        가장 효과적인 대응 방향을 도출합니다.
+                                                    </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="item">
+                                                <div class="check-div">
+                                                    <div class="check">
+                                                        <img src="./img/main/close-section/check-icon.svg" alt="체크" class="icon" />
+                                                    </div>
+                                                </div>
+                                                <div class="item-inner">
+                                                    <div class="item-body">
+                                                    <div class="number">06</div>
+                                                    <h3 class="main-box-title">법률서면 작성 및 검토</h3>
+                                                    <div class="content">
+                                                        법률서면 작성 이후에도 의뢰인과 충분히 소통하며 <br/>
+                                                        내용을 재검토하고 보완합니다.
+                                                    </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="item">
+                                                <div class="check-div">
+                                                    <div class="check">
+                                                        <img src="./img/main/close-section/check-icon.svg" alt="체크" class="icon" />
+                                                    </div>
+                                                </div>
+                                                <div class="item-inner">
+                                                    <div class="item-body">
+                                                    <div class="number">07</div>
+                                                    <h3 class="main-box-title">조사 · 재판 직접 대응</h3>
+                                                    <div class="content">
+                                                        경찰 조사 동석, 구치소 접견, 재판 기일 출석까지 <br/>
+                                                        사건 전 과정에 직접 함께 대응합니다.
+                                                    </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="item">
+                                                <div class="check-div">
+                                                    <div class="check">
+                                                        <img src="./img/main/close-section/check-icon.svg" alt="체크" class="icon" />
+                                                    </div>
+                                                </div>
+                                                <div class="item-inner">
+                                                    <div class="item-body">
+                                                    <div class="number">08</div>
+                                                    <h3 class="main-box-title">결과 공유 및 후속 지원</h3>
+                                                    <div class="content">
+                                                        최종 결과를 의뢰인과 공유하고, 실제 피해 회복 및 <br/>
+                                                        후속 이행 과정까지 실질적인 도움을 제공합니다.
+                                                    </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                            </div>
+                        </div>
+                    </section>
+                    <section class="case-section">
+                        <div class="inner">
+                            <h3 class="main-box-title center">Case Results</h3>
+                            <h2 class="main-title center">
+                                실제 결과를 데이터로 <br class="mo-br"/><b>똑똑하게 일하는</b> 로펌
+                            </h2>
+                            <div class="main-content center">억울하게 사건에 휘말리신 분들을 위해 싸우겠습니다.</div>
+                            <div class="slide-wrap case-item-list">
                                 <div class="swiper mySwiper">
                                     <div class="swiper-wrapper">
                                         <div class="swiper-slide">
                                             <a href="#">
                                                 <div class="item">
-                                                    <div class="img-box" style="background-image: url('./img/main/oneteam-section/item-background1.jpg');"></div>
-                                                    <div class="text-box">
-                                                        <div class="title">상속</div>
-                                                        <div class="en-title">School Violence</div>
-                                                        <div class="button">Learn More + </div>
+                                                    <div class="icon-div">
+                                                        <img src="./img/main/case-section/icon.png" alt="아이콘" class="icon" />
+                                                    </div>
+
+                                                    <div class="img-div">
+                                                        <div class="real" style="background-image: url('./img/main/case-section/example.jpg');"></div>
+                                                        <div class="label">사기죄 : 무죄</div>
+                                                    </div>
+                                                    <div class="content-div">
+                                                        <div class="title">음란물유포 - 불송치결정</div>
+                                                        <div class="content">
+                                                            본 사건은 카메라 등을 이용한 촬영 행위와 
+                                                            그 촬영물의 유포 여부가 문제 된 사안으로 
+                                                            본 사건은 카메라 등을 이용한 촬영 행위와 
+                                                            그 촬영물의 유포 여부가 문제 된 사안으로
+                                                        </div>
+                                                        <div class="more">
+                                                            View more
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </a>
@@ -336,11 +607,25 @@
                                         <div class="swiper-slide">
                                             <a href="#">
                                                 <div class="item">
-                                                    <div class="img-box" style="background-image: url('./img/main/oneteam-section/item-background2.jpg');"></div>
-                                                    <div class="text-box">
-                                                        <div class="title">학교폭력</div>
-                                                        <div class="en-title">School Violence</div>
-                                                        <div class="button">Learn More + </div>
+                                                    <div class="icon-div">
+                                                        <img src="./img/main/case-section/icon.png" alt="아이콘" class="icon" />
+                                                    </div>
+
+                                                    <div class="img-div">
+                                                        <div class="real" style="background-image: url('./img/main/case-section/example.jpg');"></div>
+                                                        <div class="label">사기죄 : 무죄</div>
+                                                    </div>
+                                                    <div class="content-div">
+                                                        <div class="title">음란물유포 - 불송치결정</div>
+                                                        <div class="content">
+                                                            본 사건은 카메라 등을 이용한 촬영 행위와 
+                                                            그 촬영물의 유포 여부가 문제 된 사안으로 
+                                                            본 사건은 카메라 등을 이용한 촬영 행위와 
+                                                            그 촬영물의 유포 여부가 문제 된 사안으로
+                                                        </div>
+                                                        <div class="more">
+                                                            View more
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </a>
@@ -348,35 +633,25 @@
                                         <div class="swiper-slide">
                                             <a href="#">
                                                 <div class="item">
-                                                    <div class="img-box" style="background-image: url('./img/main/oneteam-section/item-background3.jpg');"></div>
-                                                    <div class="text-box">
-                                                        <div class="title">형사</div>
-                                                        <div class="en-title">Criminal Defense</div>
-                                                        <div class="button">Learn More + </div>
+                                                    <div class="icon-div">
+                                                        <img src="./img/main/case-section/icon.png" alt="아이콘" class="icon" />
                                                     </div>
-                                                </div>
-                                            </a>
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <a href="#">
-                                                <div class="item">
-                                                    <div class="img-box" style="background-image: url('./img/main/oneteam-section/item-background3.jpg');"></div>
-                                                    <div class="text-box">
-                                                        <div class="title">이혼 · 상간</div>
-                                                        <div class="en-title">Divorce · Adultery</div>
-                                                        <div class="button">Learn More + </div>
+
+                                                    <div class="img-div">
+                                                        <div class="real" style="background-image: url('./img/main/case-section/example.jpg');"></div>
+                                                        <div class="label">사기죄 : 무죄</div>
                                                     </div>
-                                                </div>
-                                            </a>
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <a href="#">
-                                                <div class="item">
-                                                    <div class="img-box" style="background-image: url('./img/main/oneteam-section/item-background3.jpg');"></div>
-                                                    <div class="text-box">
-                                                        <div class="title">일반 민사</div>
-                                                        <div class="en-title">Civil Litigation</div>
-                                                        <div class="button">Learn More + </div>
+                                                    <div class="content-div">
+                                                        <div class="title">음란물유포 - 불송치결정</div>
+                                                        <div class="content">
+                                                            본 사건은 카메라 등을 이용한 촬영 행위와 
+                                                            그 촬영물의 유포 여부가 문제 된 사안으로 
+                                                            본 사건은 카메라 등을 이용한 촬영 행위와 
+                                                            그 촬영물의 유포 여부가 문제 된 사안으로
+                                                        </div>
+                                                        <div class="more">
+                                                            View more
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </a>
@@ -386,9 +661,126 @@
                             </div>
                         </div>
                     </section>
+                    <section class="review-section">
+                        <div class="inner">
+                            <h3 class="main-box-title center">Client Reviews</h3>
+                            <h2 class="main-title center">의뢰인이 경험이 <br class="mo-br"/><b>신뢰를 만듭니다</b></h2>
+                            <div class="slide-wrap review-item-list">
+                                <div class="swiper mySwiper">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide">
+                                            <div class="item">
+                                                <div class="title-div">
+                                                    <div class="title">
+                                                        빠른 대응 덕분에<br/>
+                                                        방향을 잡았습니다
+                                                        빠른 대응 덕분에<br/>
+                                                        방향을 잡았습니다
+                                                    </div>
+                                                    <img src="./img/main/review-section/logo.svg" alt="대온 로고" class="icon" />
+                                                </div>
+                                                <div class="img-div" style="background-image: url('./img/main/review-section/example.jpg');"></div>
+                                                <div class="name-div">
+                                                    <div class="id">rh***123님</div>
+                                                     <div class="more">자세히보기 +</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <div class="item">
+                                                <div class="title-div">
+                                                    <div class="title">
+                                                        빠른 대응 덕분에<br/>
+                                                        방향을 잡았습니다
+                                                        빠른 대응 덕분에<br/>
+                                                        방향을 잡았습니다
+                                                    </div>
+                                                    <img src="./img/main/review-section/logo.svg" alt="대온 로고" class="icon" />
+                                                </div>
+                                                <div class="img-div" style="background-image: url('./img/main/review-section/example.jpg');"></div>
+                                                <div class="name-div">
+                                                    <div class="id">rh***123님</div>
+                                                     <div class="more">자세히보기 +</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <div class="item">
+                                                <div class="title-div">
+                                                    <div class="title">
+                                                        빠른 대응 덕분에<br/>
+                                                        방향을 잡았습니다
+                                                        빠른 대응 덕분에<br/>
+                                                        방향을 잡았습니다
+                                                    </div>
+                                                    <img src="./img/main/review-section/logo.svg" alt="대온 로고" class="icon" />
+                                                </div>
+                                                <div class="img-div" style="background-image: url('./img/main/review-section/example.jpg');"></div>
+                                                <div class="name-div">
+                                                    <div class="id">rh***123님</div>
+                                                     <div class="more">자세히보기 +</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <div class="item">
+                                                <div class="title-div">
+                                                    <div class="title">
+                                                        빠른 대응 덕분에<br/>
+                                                        방향을 잡았습니다
+                                                        빠른 대응 덕분에<br/>
+                                                        방향을 잡았습니다
+                                                    </div>
+                                                    <img src="./img/main/review-section/logo.svg" alt="대온 로고" class="icon" />
+                                                </div>
+                                                <div class="img-div" style="background-image: url('./img/main/review-section/example.jpg');"></div>
+                                                <div class="name-div">
+                                                    <div class="id">rh***123님</div>
+                                                     <div class="more">자세히보기 +</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <div class="item">
+                                                <div class="title-div">
+                                                    <div class="title">
+                                                        빠른 대응 덕분에<br/>
+                                                        방향을 잡았습니다
+                                                        빠른 대응 덕분에<br/>
+                                                        방향을 잡았습니다
+                                                    </div>
+                                                    <img src="./img/main/review-section/logo.svg" alt="대온 로고" class="icon" />
+                                                </div>
+                                                <div class="img-div" style="background-image: url('./img/main/review-section/example.jpg');"></div>
+                                                <div class="name-div">
+                                                    <div class="id">rh***123님</div>
+                                                     <div class="more">자세히보기 +</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
                 </main>
                 <!-- } -->
-
+                <!-- 모든 페이지 공통으로 들어가는 배너 { -->
+                <section class="main footer-banner-section">
+                    <div class="inner">
+                        <h2 class="main-title center">법률 문제는 선택에 따라 <br class="mo-br"/><b>결과가 달라집니다</b></h2>
+                        <div class="content center">지금의 선택이 결과를 바꿉니다<br/> 대온과 함께 시작해보세요</div>
+                        <div class="btn-div">
+                            <a href="#">
+                                <div class="btn-text">
+                                    <div class="bg"></div>
+                                    <div class="text">지금 바로 문의하기</div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </section>
+                <!-- } -->
                 <!-- 푸터 { -->
                 <footer>
                     <div class="inner">
@@ -424,5 +816,34 @@
 
             </article>
         </main>
+
+        <!-- 플로팅 메뉴 :: 모든 페이지 공통 { -->
+         <ul class="floating-menu">
+            <li>
+                <a href="#">
+                    <div class="item call">
+                        <div class="icon-div" style="background-image: url('./img/common/floating-menu/call-icon.png');"></div>
+                        <div class="title">전화상담</div>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <div class="item kakao">
+                        <div class="icon-div" style="background-image: url('./img/common/floating-menu/kakao-icon.png');"></div>
+                        <div class="title">카톡문의</div>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <div class="item naver">
+                        <div class="icon-div" style="background-image: url('./img/common/floating-menu/naver-icon.png');"></div>
+                        <div class="title">네이버 예약</div>
+                    </div>
+                </a>
+            </li>
+         </ul>
+        <!-- } -->
     </body>
 </html>
