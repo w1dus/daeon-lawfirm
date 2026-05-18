@@ -4,7 +4,6 @@
 */
 
 
-
 document.addEventListener("DOMContentLoaded", function(e){
     
     asideMenuHandler();
@@ -13,7 +12,64 @@ document.addEventListener("DOMContentLoaded", function(e){
     closeSectionScrollSpy();
     caseSectionHandler();
     reviewSectionHandler();
+
+    textFlowSectionHandler();
+    pcNavMenuHandler();
+
 })
+
+const pcNavMenuHandler = () => {
+    $("header nav ").mouseenter(function(){
+        $('header').addClass('menu-show').addClass('white-bg');
+    })
+    $(".pc-menu-hover-bg").mouseleave(function(){
+        $('header').removeClass('menu-show').removeClass('white-bg');
+    })
+}
+
+
+const textFlowSectionHandler = () => {
+    const $flow = $('.sub .text-flow-section .text-flow-slider');
+    if (!$flow.length) return;
+
+    const slickOptions = {
+        infinite: true,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        variableWidth: true,
+        arrows: false,
+        dots: false,
+        autoplay: true,
+        autoplaySpeed: 0,
+        speed: 40000,
+        cssEase: 'linear',
+        pauseOnHover: false,
+        pauseOnFocus: false,
+        swipe: false,
+        draggable: false,
+        waitForAnimate: false
+    };
+
+    $flow.slick(slickOptions);
+
+    const resumeFlow = () => {
+        if (!$flow.hasClass('slick-initialized')) return;
+        $flow.slick('setPosition');
+        $flow.slick('slickPlay');
+    };
+
+    $flow.on('breakpoint reInit', function () {
+        setTimeout(resumeFlow, 50);
+    });
+
+    let resizeTimer;
+    $(window).on('resize', function () {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(resumeFlow, 150);
+    });
+
+    $(window).on('load', resumeFlow);
+};
 
 /** Swiper loop용 — 원본 슬라이드를 slidesPerView × multiplier 만큼 채울 때까지 복제 */
 const ensureLoopSlides = ($swiper, maxSlidesPerView, minMultiplier = 3) => {
@@ -40,97 +96,157 @@ const ensureLoopSlides = ($swiper, maxSlidesPerView, minMultiplier = 3) => {
     return $wrapper.children(".swiper-slide").length;
 };
 
-const reviewSectionHandler = () => {
+const swiperObserveOptions = {
+    observer: true,
+    observeParents: true,
+    resizeObserver: true,
+};
 
+const mainSwiperInstances = [];
+let mainSwiperResizeBound = false;
+
+const getSwiperPagination = ($swiperEl) => {
+    const paginationEl = $swiperEl
+        .closest("section, .slide-wrap")
+        .find(".swiper-pagination")[0];
+    return paginationEl
+        ? { pagination: { el: paginationEl, clickable: true } }
+        : {};
+};
+
+const refreshMainSwipers = () => {
+    if (typeof ScrollSmoother !== "undefined" && ScrollSmoother.get()) {
+        ScrollSmoother.get().refresh();
+    }
+
+    mainSwiperInstances.forEach((swiper) => {
+        if (!swiper || swiper.destroyed) return;
+
+        const realIndex = swiper.params.loop ? swiper.realIndex : swiper.activeIndex;
+
+        swiper.updateSize();
+        swiper.updateSlides();
+        swiper.update();
+
+        if (swiper.params.loop) {
+            swiper.slideToLoop(realIndex, 0, false);
+        } else {
+            swiper.slideTo(realIndex, 0, false);
+        }
+    });
+
+    if (typeof ScrollTrigger !== "undefined") {
+        ScrollTrigger.refresh();
+    }
+};
+
+const bindSwiperResize = (swiper) => {
+    mainSwiperInstances.push(swiper);
+
+    if (!mainSwiperResizeBound) {
+        mainSwiperResizeBound = true;
+
+        let resizeTimer;
+        window.addEventListener("resize", () => {
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(refreshMainSwipers, 200);
+        });
+        window.addEventListener("load", refreshMainSwipers);
+    }
+
+    requestAnimationFrame(() => {
+        requestAnimationFrame(refreshMainSwipers);
+    });
+
+    return refreshMainSwipers;
+};
+
+/** .inner max-width 1200px → container 기준 1250 breakpoint는 PC에서도 3개 미적용(2.5로 보임) */
+const caseReviewBreakpoints = {
+    1200: {
+        slidesPerView: 3,
+        spaceBetween: 58,
+    },
+    950: {
+        slidesPerView: 2.5,
+        spaceBetween: 15,
+    },
+    650: {
+        slidesPerView: 2,
+        spaceBetween: 15,
+    },
+    0: {
+        slidesPerView: 1.5,
+        spaceBetween: 15,
+    },
+};
+
+const reviewSectionHandler = () => {
     const $swiperEl = $(".main .review-section .mySwiper");
+    if (!$swiperEl.length) return;
+
     ensureLoopSlides($swiperEl, 3);
 
-    var swiper = new Swiper($swiperEl[0], {
+    const swiper = new Swiper($swiperEl[0], {
+        ...swiperObserveOptions,
         slidesPerView: 3,
-        loop : true,
-        centeredSlides : true,
+        loop: true,
+        loopedSlides: 3,
+        centeredSlides: true,
         spaceBetween: 58,
+        breakpointsBase: "container",
         autoplay: {
             delay: 2500,
             disableOnInteraction: false,
         },
-        breakpoints: {
-            1250: {
-                spaceBetween: 20,
-                spaceBetween: 58,
-            },
-            950: {
-                slidesPerView: 2.5,
-                spaceBetween: 15,
-            },
-            650: {
-                slidesPerView: 2,
-                spaceBetween: 15,
-            },
-            0: {
-                slidesPerView: 1.5,
-                spaceBetween: 15,
-            },
-        },
-      });
-}
+        breakpoints: caseReviewBreakpoints,
+    });
+
+    bindSwiperResize(swiper);
+};
 
 const caseSectionHandler = () => {
     const $swiperEl = $(".main .case-section .mySwiper");
+    if (!$swiperEl.length) return;
+
     ensureLoopSlides($swiperEl, 3);
 
-    var swiper = new Swiper($swiperEl[0], {
+    const swiper = new Swiper($swiperEl[0], {
+        ...swiperObserveOptions,
+        ...getSwiperPagination($swiperEl),
         slidesPerView: 3,
-        loop : true,
-        centeredSlides : true,
+        loop: true,
+        loopedSlides: 3,
+        centeredSlides: true,
         spaceBetween: 58,
+        breakpointsBase: "container",
         autoplay: {
             delay: 2500,
             disableOnInteraction: false,
         },
-        pagination: {
-          el: ".swiper-pagination",
-          clickable: true,
-        },
-        breakpoints: {
-            1250: {
-                spaceBetween: 20,
-                spaceBetween: 58,
-            },
-            950: {
-                slidesPerView: 2.5,
-                spaceBetween: 15,
-            },
-            650: {
-                slidesPerView: 2,
-                spaceBetween: 15,
-            },
-            0: {
-                slidesPerView: 1.5,
-                spaceBetween: 15,
-            },
-        },
-      });
+        breakpoints: caseReviewBreakpoints,
+    });
+
+    bindSwiperResize(swiper);
 };
 
 const mainOneteamHandler = () => {
-
     const $swiperEl = $(".main .oneteam-section .slide-wrap .mySwiper");
+    if (!$swiperEl.length) return;
+
     const slideCount = ensureLoopSlides($swiperEl, 3);
 
-    var swiper = new Swiper($swiperEl[0], {
+    const swiper = new Swiper($swiperEl[0], {
+        ...swiperObserveOptions,
+        ...getSwiperPagination($swiperEl),
         slidesPerView: 1.5,
         spaceBetween: 40,
         loopedSlides: slideCount || 10,
-        loop : true,
-        centeredSlides : true,
+        loop: true,
+        centeredSlides: true,
         autoplay: {
             delay: 2500,
             disableOnInteraction: false,
-        },
-        pagination: {
-            el: ".swiper-pagination",
-            clickable: true,
         },
         breakpoints: {
             1250: {
@@ -147,11 +263,11 @@ const mainOneteamHandler = () => {
                 slidesPerView: 1.2,
                 spaceBetween: 15,
             },
-        }
+        },
     });
 
-
-}
+    bindSwiperResize(swiper);
+};
 
 /** close-section: 951px 이상만 핀. 시작은 half 기준, 종료는 section 맨 아래까지(하단 패딩 포함) */
 const closeSectionParallaxPin = () => {

@@ -18,6 +18,10 @@
         <!-- swiper -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
         <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+        <!-- slick (흐름 슬라이드) -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css">
+        <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
         <!--스크립트-->
         <script type="text/javascript" src="./script/script.js"></script>
         <script type="text/javascript" src="./script/customBoard.js"></script>
@@ -35,18 +39,53 @@
                     <ul class="menu-list">
                         <li>
                             <a href="./ceo-message.html"><div class="item">법률사무소 소개</div></a>
+                            <ul class="sub-menu-list">
+                                <li>
+                                    <a href="./ceo-message.html"><div class="sub-item">인사말</div></a>
+                                </li>
+                                <li>
+                                    <a href="./about-daeon.html"><div class="sub-item">대온 소개</div></a>
+                                </li>
+                                <li>
+                                    <a href="./location.html"><div class="sub-item">오시는길</div></a>
+                                </li>
+                            </ul>
                         </li>
                         <li>
                             <a href="#"><div class="item">구성원 소개</div></a>
+                            <ul class="sub-menu-list">
+                                <li><a href="#"><div class="sub-item">구성원소개</div></a></li>
+                            </ul>
                         </li>
                         <li>
                             <a href="#"><div class="item">업무분야</div></a>
+                            <ul class="sub-menu-list">
+                                <li><a href="#"><div class="sub-item">형사</div></a></li>
+                                <li><a href="#"><div class="sub-item">학교폭력</div></a></li>
+                                <li><a href="#"><div class="sub-item">이혼 · 상간</div></a></li>
+                                <li><a href="#"><div class="sub-item">상속</div></a></li>
+                                <li><a href="#"><div class="sub-item">일반민사</div></a></li>
+                            </ul>
                         </li>
                         <li>
                             <a href="#"><div class="item">성공사례</div></a>
+                            <ul class="sub-menu-list">
+                                <li><a href="#"><div class="sub-item">승소사례</div></a></li>
+                                <li><a href="#"><div class="sub-item">고객후기</div></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#"><div class="item">안내사항</div></a>
+                            <ul class="sub-menu-list">
+                                <li><a href="#"><div class="sub-item">주요기사</div></a></li>
+                                <li><a href="#"><div class="sub-item">최신판례</div></a></li>
+                            </ul>
                         </li>
                         <li>
                             <a href="#"><div class="item">상담문의</div></a>
+                            <ul class="sub-menu-list">
+                                <li><a href="#"><div class="sub-item">상담문의</div></a></li>
+                            </ul>
                         </li>
                     </ul>
                 </nav>
@@ -68,6 +107,7 @@
               
             </div>
         </header>
+        <div class="pc-menu-hover-bg" style="background-image: url('./img/common/header/pc-menu-hover-bg.jpg');"></div>
         <!-- }-->
         <!-- 사이드 메뉴 { -->
         <section class="aside-menu">
@@ -81,19 +121,19 @@
                 <div class="menu-box-wrap">
                     <ul class="meu-list">
                         <li>
-                            <a href="./ceo-message.html" class="item">
+                            <div class="item">
                                 <div class="text">법률사무소 소개</div>
                                 <img src="./img/common/aside-menu/arrow-icon.svg" alt="화살표" class="icon" />
-                            </a>
+                            </div>
                             <ul class="sub-menu-list">
                                 <li>
                                     <a href="./ceo-message.html"><div class="sub-item">인사말</div></a>
                                 </li>
                                 <li>
-                                    <a href="#"><div class="sub-item">대온 소개</div></a>
+                                    <a href="./about-daeon.html"><div class="sub-item">대온 소개</div></a>
                                 </li>
                                 <li>
-                                    <a href="#"><div class="sub-item">오시는길</div></a>
+                                    <a href="./location.html"><div class="sub-item">오시는길</div></a>
                                 </li>
                             </ul>
                         </li>

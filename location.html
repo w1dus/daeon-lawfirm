@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <!--스타일-->
+        <link rel="stylesheet" href="./style/default.css">
+        <link rel="stylesheet" href="./style/font.css">
+        <link rel="stylesheet" href="./style/style.css">
+        <link rel="stylesheet" href="./style/animation.css">
+        <link rel="stylesheet" href="./style/customBoard.css">
+        <!-- GSAP (close-section pin 등 — script.js보다 먼저 로드) -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.1/ScrollToPlugin.min.js"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollSmoother.min.js"></script>
+        <!-- swiper -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+        <!-- slick (흐름 슬라이드) -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css">
+        <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+        <!--스크립트-->
+        <script type="text/javascript" src="./script/script.js"></script>
+        <script type="text/javascript" src="./script/customBoard.js"></script>
+        <script type="text/javascript" src="./script/common_jp.js"></script>
+    </head>
+    <body>
+        <!-- 헤더 { -->
+        <header class="">
+            <div class="inner">
+                <a href="./index">
+                    <img src="./img/common/header/white-logo.svg" alt="대온 법률사무소" class="logo white">
+                    <img src="./img/common/header/logo.svg" alt="대온 법률사무소" class="logo default">
+                </a>
+                <nav>
+                    <ul class="menu-list">
+                        <li>
+                            <a href="./ceo-message.html"><div class="item">법률사무소 소개</div></a>
+                            <ul class="sub-menu-list">
+                                <li>
+                                    <a href="./ceo-message.html"><div class="sub-item">인사말</div></a>
+                                </li>
+                                <li>
+                                    <a href="./about-daeon.html"><div class="sub-item">대온 소개</div></a>
+                                </li>
+                                <li>
+                                    <a href="./location.html"><div class="sub-item">오시는길</div></a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#"><div class="item">구성원 소개</div></a>
+                            <ul class="sub-menu-list">
+                                <li><a href="#"><div class="sub-item">구성원소개</div></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#"><div class="item">업무분야</div></a>
+                            <ul class="sub-menu-list">
+                                <li><a href="#"><div class="sub-item">형사</div></a></li>
+                                <li><a href="#"><div class="sub-item">학교폭력</div></a></li>
+                                <li><a href="#"><div class="sub-item">이혼 · 상간</div></a></li>
+                                <li><a href="#"><div class="sub-item">상속</div></a></li>
+                                <li><a href="#"><div class="sub-item">일반민사</div></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#"><div class="item">성공사례</div></a>
+                            <ul class="sub-menu-list">
+                                <li><a href="#"><div class="sub-item">승소사례</div></a></li>
+                                <li><a href="#"><div class="sub-item">고객후기</div></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#"><div class="item">안내사항</div></a>
+                            <ul class="sub-menu-list">
+                                <li><a href="#"><div class="sub-item">주요기사</div></a></li>
+                                <li><a href="#"><div class="sub-item">최신판례</div></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#"><div class="item">상담문의</div></a>
+                            <ul class="sub-menu-list">
+                                <li><a href="#"><div class="sub-item">상담문의</div></a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="btn-wrap">
+                    <div class="btn-div">
+                        <a href="tel:02-2138-3478" class="call-item">
+                            <img src="./img/common/header/call-icon.png" alt="전화상담 아이콘" class="icon default" />
+                            <img src="./img/common/header/white-call-icon.png" alt="전화상담 아이콘 흰색" class="icon white" />
+                            <div class="text">
+                                상담문의 02-2138-3478
+                            </div>
+                        </a>
+                    </div>
+                    <button type="button" class="menu-btn">
+                        <img src="./img/common/header/menu-icon.svg" alt="메뉴" class="icon default" />
+                        <img src="./img/common/header/white-menu-icon.svg" alt="메뉴" class="icon white" />
+                    </button>
+                </div>
+              
+            </div>
+        </header>
+        <div class="pc-menu-hover-bg" style="background-image: url('./img/common/header/pc-menu-hover-bg.jpg');"></div>
+        <!-- }-->
+        <!-- 사이드 메뉴 { -->
+        <section class="aside-menu">
+            <article class="aside-content">
+                <div class="btn-wrap">
+                    <img src="./img/common/aside-menu/white-logo.svg" alt="대온 법률사무소" class="logo white" />
+                    <button type="button" class="close-btn">
+                        <img src="./img/common/aside-menu/close-icon.svg" alt="닫기" class="icon default" />
+                    </button>
+                </div>
+                <div class="menu-box-wrap">
+                    <ul class="meu-list">
+                        <li>
+                            <div class="item">
+                                <div class="text">법률사무소 소개</div>
+                                <img src="./img/common/aside-menu/arrow-icon.svg" alt="화살표" class="icon" />
+                            </div>
+                            <ul class="sub-menu-list">
+                                <li>
+                                    <a href="./ceo-message.html"><div class="sub-item">인사말</div></a>
+                                </li>
+                                <li>
+                                    <a href="./about-daeon.html"><div class="sub-item">대온 소개</div></a>
+                                </li>
+                                <li>
+                                    <a href="./location.html"><div class="sub-item">오시는길</div></a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div class="item">
+                                    <div class="text">구성원 소개</div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <div class="item">
+                                <div class="text">업무분야</div>
+                                <img src="./img/common/aside-menu/arrow-icon.svg" alt="화살표" class="icon" />
+                            </div>
+                            <ul class="sub-menu-list">
+                                <li>
+                                    <a href="#"><div class="sub-item">형사</div></a>
+                                </li>
+                                <li>
+                                    <a href="#"><div class="sub-item">학교폭력</div></a>
+                                </li>
+                                <li>
+                                    <a href="#"><div class="sub-item">이혼 · 상간</div></a>
+                                </li>
+                                <li>
+                                    <a href="#"><div class="sub-item">상속</div></a>
+                                </li>
+                                <li>
+                                    <a href="#"><div class="sub-item">일반민사</div></a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <div class="item">
+                                <div class="text">성공사례</div>
+                                <img src="./img/common/aside-menu/arrow-icon.svg" alt="화살표" class="icon" />
+                            </div>
+                            <ul class="sub-menu-list">
+                                <li>
+                                    <a href="#"><div class="sub-item">승소사례</div></a>
+                                </li>
+                                <li>
+                                    <a href="#"><div class="sub-item">고객후기</div></a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <div class="item">
+                                <div class="text">안내사항</div>
+                                <img src="./img/common/aside-menu/arrow-icon.svg" alt="화살표" class="icon" />
+                            </div>
+                            <ul class="sub-menu-list">
+                                <li>
+                                    <a href="#"><div class="sub-item">주요기사</div></a>
+                                </li>
+                                <li>
+                                    <a href="#"><div class="sub-item">최신판례</div></a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div class="item">
+                                    <div class="text">상담문의</div>
+                                    <img src="./img/common/aside-menu/arrow-icon.svg" alt="화살표" class="icon" />
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </article>
+        </section>
+        <!-- }-->
+        <main id="smooth-wrapper">
+            <article id="smooth-content">
+
+                <!-- 컨텐츠 { -->
+                <main class="sub location">
+                    <section class="visual-section produce-visual-section sec_top">
+                        <div class="header-top"></div>
+                        <div class="inner">
+                            <h4>오시는길</h4>
+                            <img src="./img/sub/produce/ceo-message/daeon_law_firm.svg" alt="DAEON LAW FIRM" class="daeon-text" />
+                            <h2 class="sub-title center">
+                                결과로 신뢰를 <br class="mo-br"/><b>쌓아가는 로펌</b>
+                            </h2>
+                            <div class="sub-content center">
+                                <b>의뢰인의 문제를 끝까지 책임지는 방식으로</b><br/>
+                                법률 서비스를 제공합니다
+                            </div>
+                            <div class="btn-wrap">
+                                <a href="#" class="item type2">
+                                    <div class="text">지금 바로 문의하기 <img src="./img/sub/produce/ceo-message/right-arrow.svg" alt="화살표" class="icon" /></div>
+                                </a>
+                            </div>
+                        </div>
+                        <section class="text-flow-section">
+                            <div class="text-flow-slider">
+                                <div class="slide"><img src="./img/sub/produce/ceo-message/slick-text.svg" alt="" /></div>
+                                <div class="slide"><img src="./img/sub/produce/ceo-message/slick-text.svg" alt="" /></div>
+                                <div class="slide"><img src="./img/sub/produce/ceo-message/slick-text.svg" alt="" /></div>
+                                <div class="slide"><img src="./img/sub/produce/ceo-message/slick-text.svg" alt="" /></div>
+                            </div>
+                        </section>
+                    </section>
+                    <section class="location-section">
+                        <div class="inner">
+                            <div class="conent-wrap">
+                                <div class="top-box">
+                                    <div class="sub-bar-title">대온 법률사무소</div>
+                                    <div class="space-box">
+                                        <div class="sub-content">
+                                            서울 서초구 서초대로 250 스타갤러리브릿지빌딩 802호<br/>
+                                            우편번호 06647
+                                        </div>
+                                        <div class="subway">
+                                            <img src="./img/sub/produce/location/subway-icon.png" alt="지하철" class="icon" />
+                                            <div class="sub-content">서초역 1번출구</div>
+                                        </div>
+                                    </div>
+                                    <div class="info-wrap">
+                                        <div class="info sub-content">
+                                            <div class="label">전화번호</div>
+                                            <div class="text">
+                                                <a href="tel:02-2138-3478">02-2138-3478</a>
+                                            </div>
+                                        </div>
+                                        <div class="info sub-content">
+                                            <div class="label">E-mail</div>
+                                            <div class="text">
+                                                <a href="mailto:dwshin@daeonlaw.co.kr">dwshin@daeonlaw.co.kr</a>
+                                            </div>
+                                        </div>
+                                        <div class="info sub-content">
+                                            <div class="label">영업시간</div>
+                                            <div class="text">
+                                                평일 09:00 ~ 20:00
+                                            </div>
+                                        </div>
+                                        <div class="info sub-content">
+                                            <div class="label">긴급전화상담</div>
+                                            <div class="text">
+                                                연중무휴 24시간 상담
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="map-wrap">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3165.675241097778!2d127.00910139999999!3d37.4919894!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca14583669981%3A0x20dea5dcfb224786!2z67KV66y067KV7J24IOuMgOyYqA!5e0!3m2!1sko!2skr!4v1779094513068!5m2!1sko!2skr" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            </div>
+                        </div>
+                    </section>
+                </main>
+                <!-- } -->
+                <!-- 모든 페이지 공통으로 들어가는 배너 { -->
+                <section class="main footer-banner-section">
+                    <div class="inner">
+                        <h2 class="main-title center">법률 문제는 선택에 따라 <br class="mo-br"/><b>결과가 달라집니다</b></h2>
+                        <div class="content center">지금의 선택이 결과를 바꿉니다<br/> 대온과 함께 시작해보세요</div>
+                        <div class="btn-div">
+                            <a href="#">
+                                <div class="btn-text">
+                                    <div class="bg"></div>
+                                    <div class="text">지금 바로 문의하기</div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </section>
+                <!-- } -->
+                <!-- 푸터 { -->
+                <footer>
+                    <div class="inner">
+                        <div class="top-div">
+                            <img src="./img/common/footer/logo.svg" alt="대온 법률사무소" class="logo" />
+                        </div>
+                        <div class="bottom-div">
+                            <div class="info-box">
+                                <div class="info-item">
+                                    <div class="title">전화</div>
+                                    <div class="content">대표번호 : 02-2138-3478</div>
+                                </div>
+                                <div class="info-item">
+                                    <div class="title">E-mail</div>
+                                    <div class="content">dwshin@daeonlaw.co.kr</div>
+                                </div>
+                                <div class="info-item">
+                                    <div class="title">대표변호사</div>
+                                    <div class="content">신동우</div>
+                                </div>
+                                <div class="info-item">
+                                    <div class="title">주소</div>
+                                    <div class="content">서울 서초구 서초대로 250 스타갤러리브릿지빌딩 802호</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="copy-right">
+                            ⓒ DAEON Lawfirm. All Rights Reserved.
+                        </div>
+                    </div>
+                </footer>
+                <!-- }-->
+
+            </article>
+        </main>
+
+        <!-- 플로팅 메뉴 :: 모든 페이지 공통 { -->
+         <ul class="floating-menu">
+            <li>
+                <a href="#">
+                    <div class="item call">
+                        <div class="icon-div" style="background-image: url('./img/common/floating-menu/call-icon.png');"></div>
+                        <div class="title">전화상담</div>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <div class="item kakao">
+                        <div class="icon-div" style="background-image: url('./img/common/floating-menu/kakao-icon.png');"></div>
+                        <div class="title">카톡문의</div>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <div class="item naver">
+                        <div class="icon-div" style="background-image: url('./img/common/floating-menu/naver-icon.png');"></div>
+                        <div class="title">네이버 예약</div>
+                    </div>
+                </a>
+            </li>
+         </ul>
+        <!-- } -->
+    </body>
+</html>

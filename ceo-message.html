@@ -18,6 +18,10 @@
         <!-- swiper -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
         <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+        <!-- slick (흐름 슬라이드) -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css">
+        <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
         <!--스크립트-->
         <script type="text/javascript" src="./script/script.js"></script>
         <script type="text/javascript" src="./script/customBoard.js"></script>
@@ -35,18 +39,53 @@
                     <ul class="menu-list">
                         <li>
                             <a href="./ceo-message.html"><div class="item">법률사무소 소개</div></a>
+                            <ul class="sub-menu-list">
+                                <li>
+                                    <a href="./ceo-message.html"><div class="sub-item">인사말</div></a>
+                                </li>
+                                <li>
+                                    <a href="./about-daeon.html"><div class="sub-item">대온 소개</div></a>
+                                </li>
+                                <li>
+                                    <a href="./location.html"><div class="sub-item">오시는길</div></a>
+                                </li>
+                            </ul>
                         </li>
                         <li>
                             <a href="#"><div class="item">구성원 소개</div></a>
+                            <ul class="sub-menu-list">
+                                <li><a href="#"><div class="sub-item">구성원소개</div></a></li>
+                            </ul>
                         </li>
                         <li>
                             <a href="#"><div class="item">업무분야</div></a>
+                            <ul class="sub-menu-list">
+                                <li><a href="#"><div class="sub-item">형사</div></a></li>
+                                <li><a href="#"><div class="sub-item">학교폭력</div></a></li>
+                                <li><a href="#"><div class="sub-item">이혼 · 상간</div></a></li>
+                                <li><a href="#"><div class="sub-item">상속</div></a></li>
+                                <li><a href="#"><div class="sub-item">일반민사</div></a></li>
+                            </ul>
                         </li>
                         <li>
                             <a href="#"><div class="item">성공사례</div></a>
+                            <ul class="sub-menu-list">
+                                <li><a href="#"><div class="sub-item">승소사례</div></a></li>
+                                <li><a href="#"><div class="sub-item">고객후기</div></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#"><div class="item">안내사항</div></a>
+                            <ul class="sub-menu-list">
+                                <li><a href="#"><div class="sub-item">주요기사</div></a></li>
+                                <li><a href="#"><div class="sub-item">최신판례</div></a></li>
+                            </ul>
                         </li>
                         <li>
                             <a href="#"><div class="item">상담문의</div></a>
+                            <ul class="sub-menu-list">
+                                <li><a href="#"><div class="sub-item">상담문의</div></a></li>
+                            </ul>
                         </li>
                     </ul>
                 </nav>
@@ -68,6 +107,7 @@
               
             </div>
         </header>
+        <div class="pc-menu-hover-bg" style="background-image: url('./img/common/header/pc-menu-hover-bg.jpg');"></div>
         <!-- }-->
         <!-- 사이드 메뉴 { -->
         <section class="aside-menu">
@@ -81,19 +121,19 @@
                 <div class="menu-box-wrap">
                     <ul class="meu-list">
                         <li>
-                            <a href="./ceo-message.html" class="item">
+                            <div class="item">
                                 <div class="text">법률사무소 소개</div>
                                 <img src="./img/common/aside-menu/arrow-icon.svg" alt="화살표" class="icon" />
-                            </a>
+                            </div>
                             <ul class="sub-menu-list">
                                 <li>
                                     <a href="./ceo-message.html"><div class="sub-item">인사말</div></a>
                                 </li>
                                 <li>
-                                    <a href="#"><div class="sub-item">대온 소개</div></a>
+                                    <a href="./about-daeon.html"><div class="sub-item">대온 소개</div></a>
                                 </li>
                                 <li>
-                                    <a href="#"><div class="sub-item">오시는길</div></a>
+                                    <a href="./location.html"><div class="sub-item">오시는길</div></a>
                                 </li>
                             </ul>
                         </li>
@@ -183,7 +223,7 @@
                                 <b>누구에게나 쉽지 않은 시간입니다.</b>
                             </h2>
                             <div class="sub-content center">
-                                어떤 선택을 해야 할지, 어디서부터 시작해야 할지 막막한 상황 속에서
+                                어떤 선택을 해야 할지, <br class="mo-br"/>어디서부터 시작해야 할지 <br class="mo-br"/>막막한 상황 속에서
                                 <br/><br/>
                                 <b>
                                     의뢰인이 가장 필요로 하는 것은<br/>
@@ -192,9 +232,288 @@
                             </div>
                             <div class="btn-wrap">
                                 <a href="#" class="item type2">
-                                    <div class="text">구성원 확인하기</div>
+                                    <div class="text">구성원 확인하기 <img src="./img/sub/produce/ceo-message/right-arrow.svg" alt="화살표" class="icon" /></div>
                                 </a>
                             </div>
+                        </div>
+                        <section class="text-flow-section">
+                            <div class="text-flow-slider">
+                                <div class="slide"><img src="./img/sub/produce/ceo-message/slick-text.svg" alt="" /></div>
+                                <div class="slide"><img src="./img/sub/produce/ceo-message/slick-text.svg" alt="" /></div>
+                                <div class="slide"><img src="./img/sub/produce/ceo-message/slick-text.svg" alt="" /></div>
+                                <div class="slide"><img src="./img/sub/produce/ceo-message/slick-text.svg" alt="" /></div>
+                            </div>
+                        </section>
+                    </section>
+                    <section class="ceo-section">
+                        <div class="inner">
+                            <div class="content-wrap">
+                                <div class="ceo-div">
+                                    <img src="./img/sub/produce/ceo-message/ceo-section/ceo.png" alt="대표 변호사 신동우" class="ceo-img" />
+                                </div>
+                                <div class="ceo-content">
+                                    <div class="content-div">
+                                        <div class="title">
+                                            검증된 경험, <br class="mo-br"/>실전에서 증명된 실력
+                                        </div>
+                                        <div class="content sub-content">
+                                            대온은 고객의 다양한 법률수요에 신속하고 효과적으로 대응하고 있으며, <br/>
+                                            뛰어난 전문성을 통해 수준 높은 법률 서비스를 제공해 드리고 있습니다. <br class="mo-br"/><br class="mo-br"/>
+                                            <b>
+                                                특히 대기업과 대형 법무법인에서 수많은 사건들을 해결하며 쌓은 경험과 <br/>
+                                                노하우를 바탕으로 여러분과 함께하겠습니다.
+                                            </b> <br class="mo-br"/><br class="mo-br"/>
+                                            대온은 최근 문제되고 있는 박리다매 방식의 수임을 피하고 있으며,<br/> 
+                                            하나의 사건에 많은 시간과 정성을 쏟고 있습니다.<br/>
+                                            <b>소수의 고객에게 온전하게 집중하여 최선의 결과를 내기 위한 대온의 원칙입니다.</b><br class="mo-br"/><br class="mo-br"/>
+                                            <b>대온은 상담부터 승소까지 일관되게 고객 중심의 법률 서비스를 제공할 것임을 약속드립니다.</b>
+                                        </div>
+                                    </div>
+                                    <div class="sign-wrap">
+                                        <div class="text-wrap">
+                                            <div class="position">대표변호사</div>
+                                            <div class="name">신 동 우</div>
+                                        </div>
+                                        <img src="./img/sub/produce/ceo-message/ceo-section/sign.png" alt="신동우 대표변호사님 싸인" class="sign" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="board-section">
+                        <div class="inner">
+                            <div class="title-box">
+                                <h3 class="small-title">검증된 법률전문가의 외부활동</h3>
+                                <h2 class="sub-title center">신동우 변호사가 <br class="mo-br"/><b>수행, 자문한 사건</b></h2>
+                            </div>
+                            <div class="bg-title">언론보도</div>
+
+                            <div class="menuBox">
+                                <ul class="menuList">
+                                    <li>
+                                        <a href="#" class="item"><img src="./img/boardImg/settings.png" alt="관리자"/> <p class="txt">관리자</p></a>
+                                    </li>
+                                    <li>
+                                        <button type="button" class="item"><img src="./img/boardImg/search.png" alt="검색"/> <p class="txt">검색</p></button>
+                                        <div class="subMenu">
+                                            <div class="searchBox">
+                                                <select class="searchList">
+                                                    <option value="제목">제목</option>
+                                                    <option value="내용">내용</option>
+                                                </select>
+                                                <div class="iptBox">
+                                                    <input type="text" placeholder="검색어를 입력해주세요." class="ipt"/>
+                                                    <button class="searchBtn"><img src="./img/boardImg/search.png" alt="검색"/></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a href="./write.html" class="item"><img src="./img/boardImg/write.png" alt="글쓰기"/> <p class="txt">글쓰기</p></a>
+                                    </li>
+                                    <li>
+                                        <button type="button" class="item"><img src="./img/boardImg/threedot.png" alt="편집"/> <p class="txt">편집</p></button>
+                                        <ul class="subMenu">
+                                            <li><button type="button" class="item">선택삭제</button></li>
+                                            <li><a href="#" class="item2">선택복사</a></li>
+                                            <li><a href="#" class="item2">선택이동</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <label class="all-check">
+                                <input type="checkbox"/>
+                                &nbsp; 전체선택
+                            </label>
+                            
+                            <ul class="news-list">
+                                <li>
+                                    <input type="checkbox" />
+                                    <a href="#">
+                                        <div class="item">
+                                            <div class="img-div" style="background-image: url('./img/sub/produce/ceo-message/board-section/example.jpg');"></div>
+                                            <div class="text-box">
+                                                <div class="title">음란물 사이트 단순 시청, 변호사들 "괜찮다"vs"자수하라" 극명한 시각차</div>
+                                                <div class="content">
+                                                    불법 성착취물 유통 사이트 'AVMOV'에 대한 
+                                                    경찰 수사가 사회적 파장을 일으키면서, 
+                                                    과거 유사 사이트에서 영상을 시청한 경험이
+                                                    불법 성착취물 유통 사이트 'AVMOV'에 대한 
+                                                    경찰 수사가 사회적 파장을 일으키면서, 
+                                                    과거 유사 사이트에서 영상을 시청한 경험이
+                                                </div>
+                                                <div class="grow"></div>
+                                                <div class="date">
+                                                    2026.3.31
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <input type="checkbox" />
+                                    <a href="#">
+                                        <div class="item">
+                                            <div class="img-div" style="background-image: url('./img/sub/produce/ceo-message/board-section/example.jpg');"></div>
+                                            <div class="text-box">
+                                                <div class="title">음란물 사이트 단순 시청, 변호사들 "괜찮다"vs"자수하라" 극명한 시각차</div>
+                                                <div class="content">
+                                                    불법 성착취물 유통 사이트 'AVMOV'에 대한 
+                                                    경찰 수사가 사회적 파장을 일으키면서, 
+                                                    과거 유사 사이트에서 영상을 시청한 경험이
+                                                    불법 성착취물 유통 사이트 'AVMOV'에 대한 
+                                                    경찰 수사가 사회적 파장을 일으키면서, 
+                                                    과거 유사 사이트에서 영상을 시청한 경험이
+                                                </div>
+                                                <div class="grow"></div>
+                                                <div class="date">
+                                                    2026.3.31
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <input type="checkbox" />
+                                    <a href="#">
+                                        <div class="item">
+                                            <div class="img-div" style="background-image: url('./img/sub/produce/ceo-message/board-section/example.jpg');"></div>
+                                            <div class="text-box">
+                                                <div class="title">음란물 사이트 단순 시청, 변호사들 "괜찮다"vs"자수하라" 극명한 시각차</div>
+                                                <div class="content">
+                                                    불법 성착취물 유통 사이트 'AVMOV'에 대한 
+                                                    경찰 수사가 사회적 파장을 일으키면서, 
+                                                    과거 유사 사이트에서 영상을 시청한 경험이
+                                                    불법 성착취물 유통 사이트 'AVMOV'에 대한 
+                                                    경찰 수사가 사회적 파장을 일으키면서, 
+                                                    과거 유사 사이트에서 영상을 시청한 경험이
+                                                </div>
+                                                <div class="grow"></div>
+                                                <div class="date">
+                                                    2026.3.31
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <input type="checkbox" />
+                                    <a href="#">
+                                        <div class="item">
+                                            <div class="img-div" style="background-image: url('./img/sub/produce/ceo-message/board-section/example.jpg');"></div>
+                                            <div class="text-box">
+                                                <div class="title">음란물 사이트 단순 시청, 변호사들 "괜찮다"vs"자수하라" 극명한 시각차</div>
+                                                <div class="content">
+                                                    불법 성착취물 유통 사이트 'AVMOV'에 대한 
+                                                    경찰 수사가 사회적 파장을 일으키면서, 
+                                                    과거 유사 사이트에서 영상을 시청한 경험이
+                                                    불법 성착취물 유통 사이트 'AVMOV'에 대한 
+                                                    경찰 수사가 사회적 파장을 일으키면서, 
+                                                    과거 유사 사이트에서 영상을 시청한 경험이
+                                                </div>
+                                                <div class="grow"></div>
+                                                <div class="date">
+                                                    2026.3.31
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <input type="checkbox" />
+                                    <a href="#">
+                                        <div class="item">
+                                            <div class="img-div" style="background-image: url('./img/sub/produce/ceo-message/board-section/example.jpg');"></div>
+                                            <div class="text-box">
+                                                <div class="title">음란물 사이트 단순 시청, 변호사들 "괜찮다"vs"자수하라" 극명한 시각차</div>
+                                                <div class="content">
+                                                    불법 성착취물 유통 사이트 'AVMOV'에 대한 
+                                                    경찰 수사가 사회적 파장을 일으키면서, 
+                                                    과거 유사 사이트에서 영상을 시청한 경험이
+                                                    불법 성착취물 유통 사이트 'AVMOV'에 대한 
+                                                    경찰 수사가 사회적 파장을 일으키면서, 
+                                                    과거 유사 사이트에서 영상을 시청한 경험이
+                                                </div>
+                                                <div class="grow"></div>
+                                                <div class="date">
+                                                    2026.3.31
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <input type="checkbox" />
+                                    <a href="#">
+                                        <div class="item">
+                                            <div class="img-div" style="background-image: url('./img/sub/produce/ceo-message/board-section/example.jpg');"></div>
+                                            <div class="text-box">
+                                                <div class="title">음란물 사이트 단순 시청, 변호사들 "괜찮다"vs"자수하라" 극명한 시각차</div>
+                                                <div class="content">
+                                                    불법 성착취물 유통 사이트 'AVMOV'에 대한 
+                                                    경찰 수사가 사회적 파장을 일으키면서, 
+                                                    과거 유사 사이트에서 영상을 시청한 경험이
+                                                    불법 성착취물 유통 사이트 'AVMOV'에 대한 
+                                                    경찰 수사가 사회적 파장을 일으키면서, 
+                                                    과거 유사 사이트에서 영상을 시청한 경험이
+                                                </div>
+                                                <div class="grow"></div>
+                                                <div class="date">
+                                                    2026.3.31
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <input type="checkbox" />
+                                    <a href="#">
+                                        <div class="item">
+                                            <div class="img-div" style="background-image: url('./img/sub/produce/ceo-message/board-section/example.jpg');"></div>
+                                            <div class="text-box">
+                                                <div class="title">음란물 사이트 단순 시청, 변호사들 "괜찮다"vs"자수하라" 극명한 시각차</div>
+                                                <div class="content">
+                                                    불법 성착취물 유통 사이트 'AVMOV'에 대한 
+                                                    경찰 수사가 사회적 파장을 일으키면서, 
+                                                    과거 유사 사이트에서 영상을 시청한 경험이
+                                                    불법 성착취물 유통 사이트 'AVMOV'에 대한 
+                                                    경찰 수사가 사회적 파장을 일으키면서, 
+                                                    과거 유사 사이트에서 영상을 시청한 경험이
+                                                </div>
+                                                <div class="grow"></div>
+                                                <div class="date">
+                                                    2026.3.31
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <input type="checkbox" />
+                                    <a href="#">
+                                        <div class="item">
+                                            <div class="img-div" style="background-image: url('./img/sub/produce/ceo-message/board-section/example.jpg');"></div>
+                                            <div class="text-box">
+                                                <div class="title">음란물 사이트 단순 시청, 변호사들 "괜찮다"vs"자수하라" 극명한 시각차</div>
+                                                <div class="content">
+                                                    불법 성착취물 유통 사이트 'AVMOV'에 대한 
+                                                    경찰 수사가 사회적 파장을 일으키면서, 
+                                                    과거 유사 사이트에서 영상을 시청한 경험이
+                                                    불법 성착취물 유통 사이트 'AVMOV'에 대한 
+                                                    경찰 수사가 사회적 파장을 일으키면서, 
+                                                    과거 유사 사이트에서 영상을 시청한 경험이
+                                                </div>
+                                                <div class="grow"></div>
+                                                <div class="date">
+                                                    2026.3.31
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                            <div class="paging_box">페이징 위치입니다</div>
                         </div>
                     </section>
                 </main>
