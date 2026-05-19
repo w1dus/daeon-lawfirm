@@ -836,8 +836,9 @@ footer .copy-right{ margin-top: 35px; font-size: 14px; opacity: .6; }
 .sub .lawyer-list-section{ padding: 50px 0; }
 .sub .lawyer-list-section .lawyer-list{ margin-top: 60px; }
 .sub .lawyer-list-section .lawyer-list .item{ display: flex; gap: 80px; padding: 70px 0; border-bottom: 1px solid #CCC; }
-.sub .lawyer-list-section .lawyer-list .item .img-div-wrap{ flex-shrink: 0; }
-.sub .lawyer-list-section .lawyer-list .item .img-div-wrap .img-div{ position: relative; width: 290px; aspect-ratio: 290/390; background: linear-gradient(180deg, #2B2E33 0%, #162D38 100%); border-radius: 4px; overflow: hidden; background-size: cover; background-repeat: no-repeat; background-position: center; }
+.sub .lawyer-list-section .lawyer-list .item .img-div-wrap{ position: relative; position: relative; flex-shrink: 0; }
+.sub .lawyer-list-section .lawyer-list .item .img-div-wrap::before{ content:''; background-size: cover; background-repeat: no-repeat; background-position: center; background-image: url('../img/sub/our-team/visual-section/circle.png'); display: block; width: 300px; height: 300px; position: absolute; left: -150px; top: -120px; }
+.sub .lawyer-list-section .lawyer-list .item .img-div-wrap .img-div{ position: relative; z-index: 1; width: 290px; aspect-ratio: 290/390; background: linear-gradient(180deg, #2B2E33 0%, #162D38 100%); border-radius: 4px; overflow: hidden; background-size: cover; background-repeat: no-repeat; background-position: center; }
 .sub .lawyer-list-section .lawyer-list .item .img-div-wrap .img-div .lawyer-div{ position: absolute; left: 0; top: 0; width: 100%; height: 100%; background-size: cover; background-repeat: no-repeat; background-position: center; }
 .sub .lawyer-list-section .lawyer-list .item .more-btn{ line-height: 1.5em; box-shadow: 7px 11px 11px 0 rgba(0, 0, 0, 0.25); display: block; margin-top: 18px; padding: 12px 10px; text-align: center; background-color: #283149; border-radius: 100px; color: #fff; }
 .sub .lawyer-list-section .lawyer-list .item .more-btn.mo{ display: none; }
@@ -865,6 +866,7 @@ footer .copy-right{ margin-top: 35px; font-size: 14px; opacity: .6; }
     .sub .lawyer-list-section .lawyer-list { display: grid; grid-template-columns: repeat(2,1fr); grid-gap: 20px; }
     .sub .lawyer-list-section .lawyer-list .item{ gap: 15px; padding-top: 0; padding-bottom: 20px; flex-direction: column; }
     .sub .lawyer-list-section .lawyer-list .item .img-div-wrap{ display: flex; align-items: center; align-items: center; justify-content: center; flex-direction: column; }
+    .sub .lawyer-list-section .lawyer-list .item .img-div-wrap::before{ display: none; }
     .sub .lawyer-list-section .lawyer-list .item .content-wrap{ display: none; }
     .sub .lawyer-list-section .lawyer-list .item .content-wrap .item-div{ width: 100%; }
     .sub .lawyer-list-section .lawyer-list .item .img-div-wrap .img-div{ width: 100%; max-width: 500px; }
