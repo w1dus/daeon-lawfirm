@@ -15,8 +15,107 @@ document.addEventListener("DOMContentLoaded", function(e){
 
     textFlowSectionHandler();
     pcNavMenuHandler();
+    lawyerFlowSectionHandler();
 
 })
+
+
+/** 변호사 카드 Slick — 관리자 등록 개수(원본 .slide)에 맞춰 loop용 복제 */
+
+const lawyerFlowSectionHandler = () => {
+    const $flow = $(".sub .lawyer-flow-section .lawyer-flow-slider");
+    if (!$flow.length) return;
+
+    const lawyerFlowSlickOptions = {
+        infinite: true,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        variableWidth: true,
+        arrows: false,
+        dots: false,
+        autoplay: true,
+        autoplaySpeed: 0,
+        speed: 18000,
+        cssEase: "linear",
+        pauseOnHover: false,
+        pauseOnFocus: false,
+        swipe: false,
+        draggable: false,
+        waitForAnimate: false,
+    };
+
+    const ensureLawyerFlowSlides = ($slider) => {
+        if (!$slider || !$slider.length) return 0;
+    
+        const $legacyTrack = $slider.children(".lawyer-flow-track");
+        if ($legacyTrack.length) {
+            $legacyTrack.children(".slide").appendTo($slider);
+            $legacyTrack.remove();
+        }
+    
+        $slider.find('[data-lawyer-flow-fill="true"]').remove();
+    
+        const $sourceSlides = () =>
+            $slider.children(".slide").not('[data-lawyer-flow-fill="true"]');
+    
+        if (!$sourceSlides().length) return 0;
+    
+        const getSlideWidth = () => $sourceSlides().first().outerWidth(true) || 313;
+        const minCount = Math.max(
+            4,
+            Math.ceil(((($slider.innerWidth() || window.innerWidth) * 2) / getSlideWidth()))
+        );
+    
+        let guard = 0;
+        while ($slider.children(".slide").length < minCount && guard < 30) {
+            $sourceSlides().each(function () {
+                $(this)
+                    .clone(false)
+                    .attr("data-lawyer-flow-fill", "true")
+                    .appendTo($slider);
+            });
+            guard++;
+        }
+    
+        return $slider.children(".slide").length;
+    
+        
+    };
+    
+
+    const resumeFlow = () => {
+        if (!$flow.hasClass("slick-initialized")) return;
+        $flow.slick("setPosition");
+        $flow.slick("slickPlay");
+    };
+
+    const buildLawyerFlow = () => {
+        if ($flow.hasClass("slick-initialized")) {
+            $flow.slick("unslick");
+        }
+        ensureLawyerFlowSlides($flow);
+        $flow.slick(lawyerFlowSlickOptions);
+        resumeFlow();
+    };
+
+    buildLawyerFlow();
+
+    $flow.off("breakpoint reInit.lawyerFlow").on("breakpoint reInit.lawyerFlow", function () {
+        setTimeout(resumeFlow, 50);
+    });
+
+    let resizeTimer;
+    $(window)
+        .off("resize.lawyerFlow load.lawyerFlow")
+        .on("resize.lawyerFlow", function () {
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(buildLawyerFlow, 150);
+        })
+        .on("load.lawyerFlow", resumeFlow);
+
+    /** 관리자에서 슬라이드 추가·삭제 후 호출 */
+    window.refreshLawyerFlowSlider = buildLawyerFlow;
+};
 
 const pcNavMenuHandler = () => {
     $("header nav ").mouseenter(function(){
