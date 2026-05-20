@@ -16,8 +16,26 @@ document.addEventListener("DOMContentLoaded", function(e){
     textFlowSectionHandler();
     pcNavMenuHandler();
     lawyerFlowSectionHandler();
+    inquiryTabSectionHandler();
 
 })
+
+const inquiryTabSectionHandler = () => {
+    const $tabList = $(".sub.inquiry .inquiry-form-section .apply-tab-list .item");
+    const $panels = $(".sub.inquiry .inquiry-form-section .apply-content-list > li");
+
+    if (!$tabList.length || !$panels.length) return;
+
+    $tabList.on("click", function () {
+        const index = $(this).closest("li").index();
+
+        $tabList.removeClass("active");
+        $(this).addClass("active");
+
+        $panels.removeClass("is-active");
+        $panels.eq(index).addClass("is-active");
+    });
+};
 
 
 /** 변호사 카드 Slick — 관리자 등록 개수(원본 .slide)에 맞춰 loop용 복제 */
@@ -118,13 +136,38 @@ const lawyerFlowSectionHandler = () => {
 };
 
 const pcNavMenuHandler = () => {
-    $("header nav ").mouseenter(function(){
-        $('header').addClass('menu-show').addClass('white-bg');
-    })
-    $(".pc-menu-hover-bg").mouseleave(function(){
-        $('header').removeClass('menu-show').removeClass('white-bg');
-    })
-}
+    const closePcNavMenu = () => {
+        $("header").removeClass("menu-show white-bg");
+    };
+
+    $("header nav").mouseenter(function () {
+        $("header").addClass("menu-show white-bg");
+    });
+
+    $(".pc-menu-hover-bg").mouseleave(function () {
+        closePcNavMenu();
+    });
+
+    /** header.menu-show + .pc-menu-hover-bg 영역에서 브라우저 밖으로 나가면 닫기 */
+    $(document).on("mouseleave.pcNavMenu", function () {
+        if ($("header").hasClass("menu-show")) {
+            closePcNavMenu();
+        }
+    });
+
+    $(document).on("mouseout.pcNavMenu", function (e) {
+        if (!e.relatedTarget && $("header").hasClass("menu-show")) {
+            closePcNavMenu();
+        }
+    });
+
+    /** 스크롤 시 메뉴 닫기 (ScrollSmoother 사용 페이지 포함) */
+    $(window).on("scroll.pcNavMenu", function () {
+        if ($("header").hasClass("menu-show")) {
+            closePcNavMenu();
+        }
+    });
+};
 
 
 const textFlowSectionHandler = () => {

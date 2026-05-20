@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <!--스타일-->
+        <link rel="stylesheet" href="./style/default.css">
+        <link rel="stylesheet" href="./style/font.css">
+        <link rel="stylesheet" href="./style/style.css">
+        <link rel="stylesheet" href="./style/animation.css">
+        <link rel="stylesheet" href="./style/customBoard.css">
+        <!-- GSAP (close-section pin 등 — script.js보다 먼저 로드) -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.1/ScrollToPlugin.min.js"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollSmoother.min.js"></script>
+        <!-- swiper -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+        <!-- slick (흐름 슬라이드) -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css">
+        <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+        <!--스크립트-->
+        <script type="text/javascript" src="./script/script.js"></script>
+        <script type="text/javascript" src="./script/customBoard.js"></script>
+        <script type="text/javascript" src="./script/common_jp.js"></script>
+    </head>
+    <body>
+        <!-- 헤더 { -->
+        <header class="">
+            <div class="inner">
+                <a href="./index">
+                    <img src="./img/common/header/white-logo.svg" alt="대온 법률사무소" class="logo white">
+                    <img src="./img/common/header/logo.svg" alt="대온 법률사무소" class="logo default">
+                </a>
+                <nav>
+                    <ul class="menu-list">
+                        <li>
+                            <a href="./ceo-message.html"><div class="item">법률사무소 소개</div></a>
+                            <ul class="sub-menu-list">
+                                <li>
+                                    <a href="./ceo-message.html"><div class="sub-item">인사말</div></a>
+                                </li>
+                                <li>
+                                    <a href="./about-daeon.html"><div class="sub-item">대온 소개</div></a>
+                                </li>
+                                <li>
+                                    <a href="./location.html"><div class="sub-item">오시는길</div></a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="./our-team.html"><div class="item">구성원 소개</div></a>
+                            <ul class="sub-menu-list">
+                                <li><a href="./our-team.html"><div class="sub-item">구성원소개</div></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="./practice-criminal.html"><div class="item">업무분야</div></a>
+                            <ul class="sub-menu-list">
+                                <li><a href="./practice-criminal.html"><div class="sub-item">형사</div></a></li>
+                                <li><a href="./practice-school-violence.html"><div class="sub-item">학교폭력</div></a></li>
+                                <li><a href="./practice-divorce.html"><div class="sub-item">이혼 · 상간</div></a></li>
+                                <li><a href="./practice-inheritance.html"><div class="sub-item">상속</div></a></li>
+                                <li><a href="./practice-civil.html"><div class="sub-item">일반민사</div></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="./case-results.html"><div class="item">성공사례</div></a>
+                            <ul class="sub-menu-list">
+                                <li><a href="./case-results.html"><div class="sub-item">승소사례</div></a></li>
+                                <li><a href="./customer-reviews.html"><div class="sub-item">고객후기</div></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="./press.html"><div class="item">안내사항</div></a>
+                            <ul class="sub-menu-list">
+                                <li><a href="./press.html"><div class="sub-item">주요기사</div></a></li>
+                                <li><a href="./latest-precedents.html"><div class="sub-item">최신판례</div></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="./inquiry.html"><div class="item">상담문의</div></a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="btn-wrap">
+                    <div class="btn-div">
+                        <a href="tel:02-2138-3478" class="call-item">
+                            <img src="./img/common/header/call-icon.png" alt="전화상담 아이콘" class="icon default" />
+                            <img src="./img/common/header/white-call-icon.png" alt="전화상담 아이콘 흰색" class="icon white" />
+                            <div class="text">
+                                상담문의 02-2138-3478
+                            </div>
+                        </a>
+                    </div>
+                    <button type="button" class="menu-btn">
+                        <img src="./img/common/header/menu-icon.svg" alt="메뉴" class="icon default" />
+                        <img src="./img/common/header/white-menu-icon.svg" alt="메뉴" class="icon white" />
+                    </button>
+                </div>
+              
+            </div>
+        </header>
+        <div class="pc-menu-hover-bg" style="background-image: url('./img/common/header/pc-menu-hover-bg.jpg');"></div>
+        <!-- }-->
+        <!-- 사이드 메뉴 { -->
+        <section class="aside-menu">
+            <article class="aside-content">
+                <div class="btn-wrap">
+                    <img src="./img/common/aside-menu/white-logo.svg" alt="대온 법률사무소" class="logo white" />
+                    <button type="button" class="close-btn">
+                        <img src="./img/common/aside-menu/close-icon.svg" alt="닫기" class="icon default" />
+                    </button>
+                </div>
+                <div class="menu-box-wrap">
+                    <ul class="meu-list">
+                        <li>
+                            <div class="item">
+                                <div class="text">법률사무소 소개</div>
+                                <img src="./img/common/aside-menu/arrow-icon.svg" alt="화살표" class="icon" />
+                            </div>
+                            <ul class="sub-menu-list">
+                                <li>
+                                    <a href="./ceo-message.html"><div class="sub-item">인사말</div></a>
+                                </li>
+                                <li>
+                                    <a href="./about-daeon.html"><div class="sub-item">대온 소개</div></a>
+                                </li>
+                                <li>
+                                    <a href="./location.html"><div class="sub-item">오시는길</div></a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="./our-team.html">
+                                <div class="item">
+                                    <div class="text">구성원 소개</div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <div class="item">
+                                <div class="text">업무분야</div>
+                                <img src="./img/common/aside-menu/arrow-icon.svg" alt="화살표" class="icon" />
+                            </div>
+                            <ul class="sub-menu-list">
+                                <li>
+                                    <a href="./practice-criminal.html"><div class="sub-item">형사</div></a>
+                                </li>
+                                <li>
+                                    <a href="./practice-school-violence.html"><div class="sub-item">학교폭력</div></a>
+                                </li>
+                                <li>
+                                    <a href="./practice-divorce.html"><div class="sub-item">이혼 · 상간</div></a>
+                                </li>
+                                <li>
+                                    <a href="./practice-inheritance.html"><div class="sub-item">상속</div></a>
+                                </li>
+                                <li>
+                                    <a href="./practice-civil.html"><div class="sub-item">일반민사</div></a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <div class="item">
+                                <div class="text">성공사례</div>
+                                <img src="./img/common/aside-menu/arrow-icon.svg" alt="화살표" class="icon" />
+                            </div>
+                            <ul class="sub-menu-list">
+                                <li>
+                                    <a href="./case-results.html"><div class="sub-item">승소사례</div></a>
+                                </li>
+                                <li>
+                                    <a href="./customer-reviews.html"><div class="sub-item">고객후기</div></a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <div class="item">
+                                <div class="text">안내사항</div>
+                                <img src="./img/common/aside-menu/arrow-icon.svg" alt="화살표" class="icon" />
+                            </div>
+                            <ul class="sub-menu-list">
+                                <li>
+                                    <a href="./press.html"><div class="sub-item">주요기사</div></a>
+                                </li>
+                                <li>
+                                    <a href="./latest-precedents.html"><div class="sub-item">최신판례</div></a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="./inquiry.html">
+                                <div class="item">
+                                    <div class="text">상담문의</div>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </article>
+        </section>
+        <!-- }-->
+        <main id="smooth-wrapper">
+            <article id="smooth-content">
+
+                <!-- 컨텐츠 { -->
+                <main class="sub case-result">
+                    <section class="sub-banner-section" style="background-image: url('./img/sub/case-result/sub-banner-section/banner-background.jpg');">
+                        <div class="inner">
+                            <div class="header-top"></div>
+                            <div class="sub-title center"><b>승소사례</b></div>
+                        </div>
+                    </section>
+
+                    <section class="intro-section">
+                        <div class="inner">
+                            <div class="half-box">
+                                <div class="content-box">
+                                    <div class="bg-title">대온 법률사무소의 성공전략</div>
+                                    <ul class="item-list">
+                                        <li>
+                                            <div class="item">
+                                                <div class="icon-box" style="background-image: url('./img/sub/case-result/intro-section/icon1.png');"></div>
+                                                <div class="content-box">
+                                                    <div class="title">담당 변호사의 직접 대응</div>
+                                                    <div class="content">
+                                                        개별 사건에 대한 전문적인 이해와 경험을 바탕으로 <br/>
+                                                        신중한 분석과 전략적인 대응을 통해 최적의 결과를 도출합니다.
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="item">
+                                                <div class="icon-box" style="background-image: url('./img/sub/case-result/intro-section/icon2.png');"></div>
+                                                <div class="content-box">
+                                                    <div class="title">전략적인 사건 분석 시스템</div>
+                                                    <div class="content">
+                                                        유사 판례와 실제 승소 사례를 기반으로<br/>
+                                                        사건별 핵심 쟁점을 분석하고 최적의 전략을 수립합니다
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="item">
+                                                <div class="icon-box" style="background-image: url('./img/sub/case-result/intro-section/icon3.png');"></div>
+                                                <div class="content-box">
+                                                    <div class="title">끝까지 책임지는 진행 방식</div>
+                                                    <div class="content">
+                                                        조사 대응, 재판 수행, 결과 이후의 후속 과정까지<br/>
+                                                        사건의 전 과정을 책임감 있게 함께합니다.
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="item-bg" style="background-image:url('./img/sub/case-result/intro-section/item-img.jpg')"></div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <main class="main">
+                        <section class="case-section">
+                            <div class="inner">
+                                <h2 class="board-title center"><b>결과에는 이유가 있습니다.</b></h2>
+                                <div class="board-content">대온 법률사무소는 실제 결과로 증명합니다</div>
+
+                                <div class="menuBox">
+                                    <ul class="menuList">
+                                        <li>
+                                            <a href="#" class="item"><img src="./img/boardImg/settings.png" alt="관리자"/> <p class="txt">관리자</p></a>
+                                        </li>
+                                        <li>
+                                            <button type="button" class="item"><img src="./img/boardImg/search.png" alt="검색"/> <p class="txt">검색</p></button>
+                                            <div class="subMenu">
+                                                <div class="searchBox">
+                                                    <select class="searchList">
+                                                        <option value="제목">제목</option>
+                                                        <option value="내용">내용</option>
+                                                    </select>
+                                                    <div class="iptBox">
+                                                        <input type="text" placeholder="검색어를 입력해주세요." class="ipt"/>
+                                                        <button class="searchBtn"><img src="./img/boardImg/search.png" alt="검색"/></button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <a href="./write.html" class="item"><img src="./img/boardImg/write.png" alt="글쓰기"/> <p class="txt">글쓰기</p></a>
+                                        </li>
+                                        <li>
+                                            <button type="button" class="item"><img src="./img/boardImg/threedot.png" alt="편집"/> <p class="txt">편집</p></button>
+                                            <ul class="subMenu">
+                                                <li><button type="button" class="item">선택삭제</button></li>
+                                                <li><a href="#" class="item2">선택복사</a></li>
+                                                <li><a href="#" class="item2">선택이동</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <label class="all-check">
+                                    <input type="checkbox">
+                                    &nbsp; 전체선택
+                                </label>
+
+                                <ul class="tab-list">
+                                    <li><a href="#"><div class="item active">전체</div></a></li>
+                                    <li><a href="#"><div class="item">형사</div></a></li>
+                                    <li><a href="#"><div class="item">학교폭력</div></a></li>
+                                    <li><a href="#"><div class="item">이혼 · 상간</div></a></li>
+                                    <li><a href="#"><div class="item">상속</div></a></li>
+                                    <li><a href="#"><div class="item">일반민사</div></a></li>   
+                                </ul>
+
+                                <ul class="case-item-list case-list">
+                                    <li>
+                                        <input type="checkbox" />
+                                        <a href="./case-results-detail.html">
+                                            <div class="item">
+                                                <div class="icon-div">
+                                                    <img src="./img/main/case-section/icon.png" alt="아이콘" class="icon">
+                                                </div>
+
+                                                <div class="img-div">
+                                                    <div class="real" style="background-image: url('./img/main/case-section/example.jpg');"></div>
+                                                    <div class="label">사기죄 : 무죄</div>
+                                                </div>
+                                                <div class="content-div">
+                                                    <div class="title">음란물유포 - 불송치결정</div>
+                                                    <div class="content">
+                                                        본 사건은 카메라 등을 이용한 촬영 행위와 
+                                                        그 촬영물의 유포 여부가 문제 된 사안으로 
+                                                        본 사건은 카메라 등을 이용한 촬영 행위와 
+                                                        그 촬영물의 유포 여부가 문제 된 사안으로
+                                                    </div>
+                                                    <div class="more">
+                                                        View more
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" />
+                                        <a href="./case-results-detail.html">
+                                            <div class="item">
+                                                <div class="icon-div">
+                                                    <img src="./img/main/case-section/icon.png" alt="아이콘" class="icon">
+                                                </div>
+
+                                                <div class="img-div">
+                                                    <div class="real" style="background-image: url('./img/main/case-section/example.jpg');"></div>
+                                                    <div class="label">사기죄 : 무죄</div>
+                                                </div>
+                                                <div class="content-div">
+                                                    <div class="title">음란물유포 - 불송치결정</div>
+                                                    <div class="content">
+                                                        본 사건은 카메라 등을 이용한 촬영 행위와 
+                                                        그 촬영물의 유포 여부가 문제 된 사안으로 
+                                                        본 사건은 카메라 등을 이용한 촬영 행위와 
+                                                        그 촬영물의 유포 여부가 문제 된 사안으로
+                                                    </div>
+                                                    <div class="more">
+                                                        View more
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" />
+                                        <a href="./case-results-detail.html">
+                                            <div class="item">
+                                                <div class="icon-div">
+                                                    <img src="./img/main/case-section/icon.png" alt="아이콘" class="icon">
+                                                </div>
+
+                                                <div class="img-div">
+                                                    <div class="real" style="background-image: url('./img/main/case-section/example.jpg');"></div>
+                                                    <div class="label">사기죄 : 무죄</div>
+                                                </div>
+                                                <div class="content-div">
+                                                    <div class="title">음란물유포 - 불송치결정</div>
+                                                    <div class="content">
+                                                        본 사건은 카메라 등을 이용한 촬영 행위와 
+                                                        그 촬영물의 유포 여부가 문제 된 사안으로 
+                                                        본 사건은 카메라 등을 이용한 촬영 행위와 
+                                                        그 촬영물의 유포 여부가 문제 된 사안으로
+                                                    </div>
+                                                    <div class="more">
+                                                        View more
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" />
+                                        <a href="./case-results-detail.html">
+                                            <div class="item">
+                                                <div class="icon-div">
+                                                    <img src="./img/main/case-section/icon.png" alt="아이콘" class="icon">
+                                                </div>
+
+                                                <div class="img-div">
+                                                    <div class="real" style="background-image: url('./img/main/case-section/example.jpg');"></div>
+                                                    <div class="label">사기죄 : 무죄</div>
+                                                </div>
+                                                <div class="content-div">
+                                                    <div class="title">음란물유포 - 불송치결정</div>
+                                                    <div class="content">
+                                                        본 사건은 카메라 등을 이용한 촬영 행위와 
+                                                        그 촬영물의 유포 여부가 문제 된 사안으로 
+                                                        본 사건은 카메라 등을 이용한 촬영 행위와 
+                                                        그 촬영물의 유포 여부가 문제 된 사안으로
+                                                    </div>
+                                                    <div class="more">
+                                                        View more
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" />
+                                        <a href="./case-results-detail.html">
+                                            <div class="item">
+                                                <div class="icon-div">
+                                                    <img src="./img/main/case-section/icon.png" alt="아이콘" class="icon">
+                                                </div>
+
+                                                <div class="img-div">
+                                                    <div class="real" style="background-image: url('./img/main/case-section/example.jpg');"></div>
+                                                    <div class="label">사기죄 : 무죄</div>
+                                                </div>
+                                                <div class="content-div">
+                                                    <div class="title">음란물유포 - 불송치결정</div>
+                                                    <div class="content">
+                                                        본 사건은 카메라 등을 이용한 촬영 행위와 
+                                                        그 촬영물의 유포 여부가 문제 된 사안으로 
+                                                        본 사건은 카메라 등을 이용한 촬영 행위와 
+                                                        그 촬영물의 유포 여부가 문제 된 사안으로
+                                                    </div>
+                                                    <div class="more">
+                                                        View more
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" />
+                                        <a href="./case-results-detail.html">
+                                            <div class="item">
+                                                <div class="icon-div">
+                                                    <img src="./img/main/case-section/icon.png" alt="아이콘" class="icon">
+                                                </div>
+
+                                                <div class="img-div">
+                                                    <div class="real" style="background-image: url('./img/main/case-section/example.jpg');"></div>
+                                                    <div class="label">사기죄 : 무죄</div>
+                                                </div>
+                                                <div class="content-div">
+                                                    <div class="title">음란물유포 - 불송치결정</div>
+                                                    <div class="content">
+                                                        본 사건은 카메라 등을 이용한 촬영 행위와 
+                                                        그 촬영물의 유포 여부가 문제 된 사안으로 
+                                                        본 사건은 카메라 등을 이용한 촬영 행위와 
+                                                        그 촬영물의 유포 여부가 문제 된 사안으로
+                                                    </div>
+                                                    <div class="more">
+                                                        View more
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" />
+                                        <a href="./case-results-detail.html">
+                                            <div class="item">
+                                                <div class="icon-div">
+                                                    <img src="./img/main/case-section/icon.png" alt="아이콘" class="icon">
+                                                </div>
+
+                                                <div class="img-div">
+                                                    <div class="real" style="background-image: url('./img/main/case-section/example.jpg');"></div>
+                                                    <div class="label">사기죄 : 무죄</div>
+                                                </div>
+                                                <div class="content-div">
+                                                    <div class="title">음란물유포 - 불송치결정</div>
+                                                    <div class="content">
+                                                        본 사건은 카메라 등을 이용한 촬영 행위와 
+                                                        그 촬영물의 유포 여부가 문제 된 사안으로 
+                                                        본 사건은 카메라 등을 이용한 촬영 행위와 
+                                                        그 촬영물의 유포 여부가 문제 된 사안으로
+                                                    </div>
+                                                    <div class="more">
+                                                        View more
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" />
+                                        <a href="./case-results-detail.html">
+                                            <div class="item">
+                                                <div class="icon-div">
+                                                    <img src="./img/main/case-section/icon.png" alt="아이콘" class="icon">
+                                                </div>
+
+                                                <div class="img-div">
+                                                    <div class="real" style="background-image: url('./img/main/case-section/example.jpg');"></div>
+                                                    <div class="label">사기죄 : 무죄</div>
+                                                </div>
+                                                <div class="content-div">
+                                                    <div class="title">음란물유포 - 불송치결정</div>
+                                                    <div class="content">
+                                                        본 사건은 카메라 등을 이용한 촬영 행위와 
+                                                        그 촬영물의 유포 여부가 문제 된 사안으로 
+                                                        본 사건은 카메라 등을 이용한 촬영 행위와 
+                                                        그 촬영물의 유포 여부가 문제 된 사안으로
+                                                    </div>
+                                                    <div class="more">
+                                                        View more
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" />
+                                        <a href="./case-results-detail.html">
+                                            <div class="item">
+                                                <div class="icon-div">
+                                                    <img src="./img/main/case-section/icon.png" alt="아이콘" class="icon">
+                                                </div>
+
+                                                <div class="img-div">
+                                                    <div class="real" style="background-image: url('./img/main/case-section/example.jpg');"></div>
+                                                    <div class="label">사기죄 : 무죄</div>
+                                                </div>
+                                                <div class="content-div">
+                                                    <div class="title">음란물유포 - 불송치결정</div>
+                                                    <div class="content">
+                                                        본 사건은 카메라 등을 이용한 촬영 행위와 
+                                                        그 촬영물의 유포 여부가 문제 된 사안으로 
+                                                        본 사건은 카메라 등을 이용한 촬영 행위와 
+                                                        그 촬영물의 유포 여부가 문제 된 사안으로
+                                                    </div>
+                                                    <div class="more">
+                                                        View more
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" />
+                                        <a href="./case-results-detail.html">
+                                            <div class="item">
+                                                <div class="icon-div">
+                                                    <img src="./img/main/case-section/icon.png" alt="아이콘" class="icon">
+                                                </div>
+
+                                                <div class="img-div">
+                                                    <div class="real" style="background-image: url('./img/main/case-section/example.jpg');"></div>
+                                                    <div class="label">사기죄 : 무죄</div>
+                                                </div>
+                                                <div class="content-div">
+                                                    <div class="title">음란물유포 - 불송치결정</div>
+                                                    <div class="content">
+                                                        본 사건은 카메라 등을 이용한 촬영 행위와 
+                                                        그 촬영물의 유포 여부가 문제 된 사안으로 
+                                                        본 사건은 카메라 등을 이용한 촬영 행위와 
+                                                        그 촬영물의 유포 여부가 문제 된 사안으로
+                                                    </div>
+                                                    <div class="more">
+                                                        View more
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" />
+                                        <a href="./case-results-detail.html">
+                                            <div class="item">
+                                                <div class="icon-div">
+                                                    <img src="./img/main/case-section/icon.png" alt="아이콘" class="icon">
+                                                </div>
+
+                                                <div class="img-div">
+                                                    <div class="real" style="background-image: url('./img/main/case-section/example.jpg');"></div>
+                                                    <div class="label">사기죄 : 무죄</div>
+                                                </div>
+                                                <div class="content-div">
+                                                    <div class="title">음란물유포 - 불송치결정</div>
+                                                    <div class="content">
+                                                        본 사건은 카메라 등을 이용한 촬영 행위와 
+                                                        그 촬영물의 유포 여부가 문제 된 사안으로 
+                                                        본 사건은 카메라 등을 이용한 촬영 행위와 
+                                                        그 촬영물의 유포 여부가 문제 된 사안으로
+                                                    </div>
+                                                    <div class="more">
+                                                        View more
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" />
+                                        <a href="./case-results-detail.html">
+                                            <div class="item">
+                                                <div class="icon-div">
+                                                    <img src="./img/main/case-section/icon.png" alt="아이콘" class="icon">
+                                                </div>
+
+                                                <div class="img-div">
+                                                    <div class="real" style="background-image: url('./img/main/case-section/example.jpg');"></div>
+                                                    <div class="label">사기죄 : 무죄</div>
+                                                </div>
+                                                <div class="content-div">
+                                                    <div class="title">음란물유포 - 불송치결정</div>
+                                                    <div class="content">
+                                                        본 사건은 카메라 등을 이용한 촬영 행위와 
+                                                        그 촬영물의 유포 여부가 문제 된 사안으로 
+                                                        본 사건은 카메라 등을 이용한 촬영 행위와 
+                                                        그 촬영물의 유포 여부가 문제 된 사안으로
+                                                    </div>
+                                                    <div class="more">
+                                                        View more
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                                
+                                <div class="paging_box">
+                                    페이징 위치입니다
+                                </div>
+                            </div>
+                        </section>
+                    </main>
+
+                </main>
+                <!-- } -->
+
+
+                <!-- 모든 페이지 공통으로 들어가는 배너 { -->
+                <section class="main footer-banner-section">
+                    <div class="inner">
+                        <h2 class="main-title center">법률 문제는 선택에 따라 <br class="mo-br"/><b>결과가 달라집니다</b></h2>
+                        <div class="content center">지금의 선택이 결과를 바꿉니다<br/> 대온과 함께 시작해보세요</div>
+                        <div class="btn-div">
+                            <a href="./inquiry.html">
+                                <div class="btn-text">
+                                    <div class="bg"></div>
+                                    <div class="text">지금 바로 문의하기</div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </section>
+                <!-- } -->
+                <!-- 푸터 { -->
+                <footer>
+                    <div class="inner">
+                        <div class="top-div">
+                            <img src="./img/common/footer/logo.svg" alt="대온 법률사무소" class="logo" />
+                        </div>
+                        <div class="bottom-div">
+                            <div class="info-box">
+                                <div class="info-item">
+                                    <div class="title">전화</div>
+                                    <div class="content">대표번호 : 02-2138-3478</div>
+                                </div>
+                                <div class="info-item">
+                                    <div class="title">E-mail</div>
+                                    <div class="content">dwshin@daeonlaw.co.kr</div>
+                                </div>
+                                <div class="info-item">
+                                    <div class="title">대표변호사</div>
+                                    <div class="content">신동우</div>
+                                </div>
+                                <div class="info-item">
+                                    <div class="title">주소</div>
+                                    <div class="content">서울 서초구 서초대로 250 스타갤러리브릿지빌딩 802호</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="copy-right">
+                            ⓒ DAEON Lawfirm. All Rights Reserved.
+                        </div>
+                    </div>
+                </footer>
+                <!-- }-->
+
+            </article>
+        </main>
+
+        <!-- 플로팅 메뉴 :: 모든 페이지 공통 { -->
+         <ul class="floating-menu">
+            <li>
+                <a href="#">
+                    <div class="item call">
+                        <div class="icon-div" style="background-image: url('./img/common/floating-menu/call-icon.png');"></div>
+                        <div class="title">전화상담</div>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <div class="item kakao">
+                        <div class="icon-div" style="background-image: url('./img/common/floating-menu/kakao-icon.png');"></div>
+                        <div class="title">카톡문의</div>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <div class="item naver">
+                        <div class="icon-div" style="background-image: url('./img/common/floating-menu/naver-icon.png');"></div>
+                        <div class="title">네이버 예약</div>
+                    </div>
+                </a>
+            </li>
+         </ul>
+        <!-- } -->
+    </body>
+</html>
