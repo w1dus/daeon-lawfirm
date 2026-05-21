@@ -49,6 +49,8 @@ const bodyScroll = () => {
       ease: "power4.out",  // 더 강한 감속 (추천)
       autoKill: false      // 스크롤 중단 방지
     });
+
+    if (typeof AOS !== "undefined") AOS.refresh();
 };
   
 const headerScrollHandler = () => {

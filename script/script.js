@@ -17,8 +17,82 @@ document.addEventListener("DOMContentLoaded", function(e){
     pcNavMenuHandler();
     lawyerFlowSectionHandler();
     inquiryTabSectionHandler();
+    glightboxHandler();
+
+    countingNumberHandler();
+    aosHandler();
 
 })
+
+const aosHandler = () => {
+    if (typeof AOS === "undefined") return;
+
+    AOS.init({
+        duration: 800,
+        easing: "ease-out-cubic",
+        once: true,
+        offset: 80,
+    });
+
+    const refreshAos = () => {
+        if (typeof AOS !== "undefined") AOS.refresh();
+    };
+
+    window.addEventListener("load", refreshAos);
+
+    if (typeof ScrollTrigger !== "undefined") {
+        ScrollTrigger.addEventListener("refresh", refreshAos);
+    }
+};
+
+const countingNumberHandler = () => {
+    const countList = document.querySelector('.main .visual-section');
+    const numbers = document.querySelectorAll('.main .visual-section .half-div .right-div .item .content .count');
+    const duration = 1; // Duration in seconds
+    if (!countList) return;
+
+    function formatNumber(num) {
+        return num.toLocaleString();
+    }
+
+    function animateCount() {
+        numbers.forEach(number => {
+            const target = +number.getAttribute('data-count');
+            const increment = target / (duration * 60); // 60 frames per second
+            let current = 0;
+
+            function updateCount() {
+                current += increment;
+                if (current < target) {
+                    number.textContent = formatNumber(Math.ceil(current)) + "";
+                    requestAnimationFrame(updateCount);
+                } else {
+                    number.textContent = formatNumber(target) + "";
+                }
+            }
+            updateCount();
+        });
+    }
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                countList.classList.add('on');
+                animateCount();
+                observer.unobserve(countList);
+            }
+        });
+    }, {
+        threshold: 0.8
+    });
+    observer.observe(countList);
+}
+
+const glightboxHandler = () => {
+    if (typeof GLightbox !== 'undefined') {
+        GLightbox({ selector: '.glightbox' });
+    }
+}
 
 const inquiryTabSectionHandler = () => {
     const $tabList = $(".sub.inquiry .inquiry-form-section .apply-tab-list .item");
@@ -244,6 +318,13 @@ const swiperObserveOptions = {
     resizeObserver: true,
 };
 
+/** 메인 Swiper — oneteam / case / review 공통 */
+const mainSwiperAutoplay = {
+    delay: 1200,
+    disableOnInteraction: false,
+};
+const mainSwiperSpeed = 250;
+
 const mainSwiperInstances = [];
 let mainSwiperResizeBound = false;
 
@@ -337,10 +418,8 @@ const reviewSectionHandler = () => {
         centeredSlides: true,
         spaceBetween: 58,
         breakpointsBase: "container",
-        autoplay: {
-            delay: 2500,
-            disableOnInteraction: false,
-        },
+        speed: mainSwiperSpeed,
+        autoplay: mainSwiperAutoplay,
         breakpoints: caseReviewBreakpoints,
     });
 
@@ -362,10 +441,8 @@ const caseSectionHandler = () => {
         centeredSlides: true,
         spaceBetween: 58,
         breakpointsBase: "container",
-        autoplay: {
-            delay: 2500,
-            disableOnInteraction: false,
-        },
+        speed: mainSwiperSpeed,
+        autoplay: mainSwiperAutoplay,
         breakpoints: caseReviewBreakpoints,
     });
 
@@ -386,10 +463,8 @@ const mainOneteamHandler = () => {
         loopedSlides: slideCount || 10,
         loop: true,
         centeredSlides: true,
-        autoplay: {
-            delay: 2500,
-            disableOnInteraction: false,
-        },
+        speed: mainSwiperSpeed,
+        autoplay: mainSwiperAutoplay,
         breakpoints: {
             1250: {
                 slidesPerView: 3,
